@@ -5,16 +5,18 @@ import { GraduationCap, Briefcase, Award, Eye, Heart } from 'lucide-react'
 
 export default function About() {
   const education = [
-    { degree: 'MBBS', institution: 'NHL Medical College, Ahmedabad', year: '2001' },
+    { degree: 'M.S. (Master of Surgery) - ENT', institution: 'B J Medical College, Ahmedabad', year: '2004' },
     { degree: 'DLO', institution: 'B J Medical College, Ahmedabad', year: '2003' },
-    { degree: 'MS (ENT)', institution: 'B J Medical College, Ahmedabad', year: '2004' },
+    { degree: 'MBBS', institution: 'NHL Medical College, Ahmedabad', year: '2001' },
+    
+    
   ]
 
   const experience = [
-    'Former Professor and HOD, ENT at Chirayu Medical College and Hospital',
+    'Professor and HOD, ENT at Chirayu Medical College and Hospital',
     'Former Professor, ENT at C U Shah Medical College',
-    'Former Senior Resident at B J Medical College',
-    '24+ Years in Healthcare Practice',
+    'Former Senior Resident and Resident Doctor at B J Medical College',
+    '20+ Years in Healthcare Practice',
   ]
 
   const memberships = [
@@ -77,10 +79,11 @@ export default function About() {
                 Know Your Doctor
               </h3>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Dr. Anil Kumar Jain is a highly experienced ENT Specialist and Cochlear Implant Surgeon 
+                {/* Dr. Anil Kumar Jain is a highly experienced ENT Specialist and Cochlear Implant Surgeon 
                 with over 24 years of dedicated service in healthcare. He is committed to providing 
                 state-of-the-art healthcare services with special interest in training medical students 
-                and healthcare professionals.
+                and healthcare professionals. */}
+                I am a Senior ENT and Cochlear Implant Surgeon, ENT Specialist, Microscopic and Endoscopic Surgeon. FESS expert. Providing state of art health care services to the society at large. I have special interest in training the MBBS, MS, Dental, Physiotherapy and Nursing Students so that they can master the art to take care of the patients with Skill, Precision and HONESTY. I am always eager and available to spread awareness about Healthy Life style and importance of Health Hygiene, | strongly believe that Prevention is Better than Cure. In my YouTube Channel (AasaanLife4U) I have posted videos, in simple language to spread awareness about how to take care of your health. In play list AAPKA SWASTH many such videos can be seen. I am very close to Nature and taking care of plants, birds and much more. This keeps me Humble, Relaxed and Energetic to serve one and all.
               </p>
             </div>
 
@@ -128,29 +131,6 @@ export default function About() {
                   >
                     <div className="w-2 h-2 bg-medical-red rounded-full mt-3 flex-shrink-0"></div>
                     <span className="text-gray-700">{exp}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Memberships */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-medical-red/10">
-              <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                <Award className="w-6 h-6 text-medical-red" />
-                Professional Memberships
-              </h4>
-              <div className="space-y-3">
-                {memberships.map((membership, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3 p-3 hover:bg-medical-cream rounded-lg transition-colors duration-200"
-                  >
-                    <div className="w-2 h-2 bg-medical-red rounded-full mt-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">{membership}</span>
                   </motion.div>
                 ))}
               </div>
@@ -222,12 +202,38 @@ export default function About() {
               </h4>
               <div className="space-y-3 text-lg">
                 <p><strong>AASAAN</strong> is a short form of</p>
-                <p><strong className="text-yellow-200">A</strong>ASHI, <strong className="text-yellow-200">A</strong>NSHITA, <strong className="text-yellow-200">S</strong>ANYOGITA, <strong className="text-yellow-200">A</strong>NIL</p>
+                <p><strong className="text-yellow-200">A</strong>ASHI, <strong className="text-yellow-200">A</strong>NSHITA, <strong className="text-yellow-200">SA</strong>NYOGITA, <strong className="text-yellow-200">AN</strong>IL</p>
                 <p className="text-sm opacity-90 mt-4">
-                  हैं हिंदी एक नाम नहीं, हमारी आत्मा है।<br/>
-                  यह हमारे परिवार और खुद हमारे मिशन-कार हम है।<br/>
-                  हम हमेशा अपने नाम, अपने काम और अपने परिवार की गरिमा बनाए रखते हैं।
+                है ना, बिल्कुल आसान !<br/>
+
+                यह सिर्फ एक नाम नहीं, हमारी आत्मा है।<br/>
+
+                यह हमारे परिवार और खुद हमसे मिल कर बना है। <br/>
+                
+                हम हमेशा अपने नाम, अपने पेशे और अपने परिवार की गरिमा बनाए रखेंगे।
                 </p>
+              </div>
+            </div>
+            {/* Memberships */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-medical-red/10">
+              <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Award className="w-6 h-6 text-medical-red" />
+                Professional Memberships
+              </h4>
+              <div className="space-y-3">
+                {memberships.map((membership, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-3 p-3 hover:bg-medical-cream rounded-lg transition-colors duration-200"
+                  >
+                    <div className="w-2 h-2 bg-medical-red rounded-full mt-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">{membership}</span>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </motion.div>

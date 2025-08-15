@@ -1,36 +1,33 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import Header from '@/components/Header'
+import { useState } from 'react'
 import Hero from '@/components/Hero'
-import About from '@/components/About'
 import Services from '@/components/Services'
+import About from '@/components/About'
 import Locations from '@/components/Locations'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import BookingModal from '@/components/BookingModal'
+import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
 
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+  const openBookingModal = () => setIsBookingModalOpen(true)
+  const closeBookingModal = () => setIsBookingModalOpen(false)
 
   return (
-    <motion.main 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isLoaded ? 1 : 0 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen"
-    >
-      <Header />
-      <Hero />
+    <main>
+      <Header onBookingClick={openBookingModal} />
+      <Hero onBookingClick={openBookingModal} />
+      <Testimonials />
+      <Services onBookingClick={openBookingModal} />
       <About />
-      <Services />
       <Locations />
       <Contact />
       <Footer />
-    </motion.main>
+      <BookingModal isOpen={isBookingModalOpen} onClose={closeBookingModal} />
+    </main>
   )
 }

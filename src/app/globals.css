@@ -6,16 +6,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Professional Medical Colors - Matching Brochure */
-  --medical-red: #dc2626; /* Medical Red Cross */
-  --medical-blue: #1e40af; /* Professional Blue */
-  --medical-white: #ffffff; /* Pure White */
-  --medical-cream: #fef7ed; /* Warm Cream Background */
-  --medical-gray: #374151; /* Professional Gray Text */
-  --medical-light-gray: #6b7280; /* Light Gray Text */
-  --medical-border: #d1d5db; /* Light Border */
-  --medical-shadow: rgba(0, 0, 0, 0.1); /* Professional Shadow */
-  --medical-accent: #059669; /* Health Green */
+  /* Accessible Medical Design System */
+  --brand-primary: #c62828; /* Deep red - primary CTA */
+  --brand-accent: #7a2b2b; /* Accent/darker red */
+  --bg-cream: #f6efea; /* Page background */
+  --card-bg: #ffffff; /* Card background */
+  --text-primary: #111827; /* Near black */
+  --text-muted: #5b5b5b; /* Muted text */
+  --success: #2e7d32; /* Success green */
+  --warning: #f59e0b; /* Warning orange */
+  --muted-red: #a33a3a; /* Icons/backgrounds - use sparingly */
+  
+  /* Radius & Elevation */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --elevation-1: 0 6px 18px rgba(16,24,40,0.06);
+  --elevation-2: 0 12px 30px rgba(16,24,40,0.12);
+  
+  /* Spacing Scale (8pt grid) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
 }
 
 * {
@@ -49,8 +66,8 @@ html {
 
 body {
   font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
-  background: var(--medical-white);
-  color: var(--medical-gray);
+  background: var(--bg-cream);
+  color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -92,21 +109,35 @@ body::before {
   transform: translateY(-2px);
 }
 
+/* Primary CTA Button */
 .medical-button {
-  background: var(--medical-red);
-  color: var(--medical-white);
-  padding: 12px 24px;
-  border-radius: 8px;
+  background: var(--brand-primary);
+  color: var(--card-bg);
+  padding: 12px 20px;
+  border-radius: var(--radius-lg);
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 200ms cubic-bezier(.2,.9,.2,1);
   border: none;
   cursor: pointer;
+  box-shadow: var(--elevation-2);
+  text-decoration: none;
 }
 
 .medical-button:hover {
-  background: #b91c1c;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+  background: var(--brand-accent);
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: var(--elevation-2);
+}
+
+.medical-button:focus {
+  outline: 3px solid var(--brand-accent);
+  outline-offset: 2px;
 }
 
 .medical-cross {
@@ -120,7 +151,7 @@ body::before {
 .medical-cross::after {
   content: '';
   position: absolute;
-  background: var(--medical-red);
+  background: var(--brand-primary);
 }
 
 .medical-cross::before {
@@ -137,6 +168,75 @@ body::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Secondary Button */
+.medical-button-secondary {
+  background: transparent;
+  color: var(--brand-primary);
+  border: 2px solid var(--brand-primary);
+  padding: 10px 20px;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 16px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 200ms cubic-bezier(.2,.9,.2,1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.medical-button-secondary:hover {
+  background: var(--brand-primary);
+  color: var(--card-bg);
+  transform: scale(1.02);
+}
+
+/* Microtrust Row */
+.microtrust-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: var(--space-md) 0;
+}
+
+.microtrust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* Sticky Header */
+.header-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--card-bg);
+  box-shadow: var(--elevation-1);
+  height: 56px;
+  transition: all 300ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* Mobile Sticky CTA */
+.mobile-sticky-cta {
+  position: fixed;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  right: var(--space-md);
+  z-index: 40;
+}
+
+@media (min-width: 768px) {
+  .mobile-sticky-cta {
+    display: none;
+  }
 }
 
 /* Focus States for Accessibility */

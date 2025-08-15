@@ -31,7 +31,7 @@ export default function Footer() {
               आसान ईएनटी क्लिनिक
             </p>
             <p className="text-gray-400 leading-relaxed mb-6">
-              Leading ENT Specialist in Bhopal with 24+ years experience. 
+              Leading ENT Specialist in Bhopal with 20+ years experience. 
               Expert in Cochlear Implant, Endoscopy, and comprehensive ENT treatments.
             </p>
             <div className="flex items-center gap-2 text-medical-red">

@@ -12,21 +12,23 @@ export default function Locations() {
       id: 'lalghati',
       name: 'Lalghati Clinic',
       regNumber: 'MP-6753',
-      address: 'Ashapuri Plaza, Gufa Mandir Road, Lalghati, Bhopal',
+      address: 'Ashtapad Plaza, Gufa Mandir Road, Lalghati, Bhopal',
       timing: '5:10 PM - 9:00 PM',
       phone: '7240868002',
       specialNote: 'Sunday - Only on Appointment',
+      consultationFee: '₹300',
       noteType: 'warning'
     },
     {
       id: 'sant-hirdaram',
       name: 'Sant Hirdaram Nagar Clinic',
-      regNumber: 'MP-3652',
+      regNumber: 'MP-6753',
       address: 'G-56 Krishna Plaza, Near Prarthna Medical Center, Near Narmada Sweet House, Sant Hirdaram Nagar, Bairagarh, Bhopal - 462030',
       timing: '5:10 PM - 9:00 PM',
       phone: '7240868002',
+      specialNote: 'Sunday - Only on Appointment',
       consultationFee: '₹300',
-      noteType: 'info'
+      noteType: 'warning'
     }
   ]
 
@@ -199,11 +201,11 @@ export default function Locations() {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Need to Schedule an Appointment?
               <span className="block text-lg font-normal text-medical-brown hindi-text mt-2">
-                अपॉइंटमेंट शेड्यूल करना चाहते हैं?
+                {/* अपॉइंटमेंट शेड्यूल करना चाहते हैं? */}
               </span>
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Call us directly or visit either of our clinic locations. We're here to provide you with the best ENT care in Bhopal.
+              Call us directly or visit either of our clinic locations. We&apos;re here to provide you with the best ENT care in Bhopal.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a

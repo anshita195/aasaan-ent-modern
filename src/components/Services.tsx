@@ -3,63 +3,41 @@
 import { motion } from 'framer-motion'
 import { Headphones, Search, Mic, Wind, MessageCircle, RotateCcw, Scissors, Stethoscope } from 'lucide-react'
 
-export default function Services() {
+interface ServicesProps {
+  onBookingClick?: () => void
+}
+
+export default function Services({ onBookingClick }: ServicesProps) {
   const services = [
     {
-      icon: Headphones,
-      title: 'Cochlear Implant Surgery',
-      description: 'Advanced hearing restoration surgery for severe hearing loss patients with state-of-the-art technology.',
-      hindi: 'कॉक्लियर इम्प्लांट सर्जरी',
-      anatomicalPart: 'ear'
-    },
-    {
-      icon: Search,
-      title: 'Endoscopy Procedures',
-      description: 'Nasal Endoscopy, DLBx, Oto-Endoscopy, Laryngoscopy, and Oesophagoscopy for accurate diagnosis.',
-      hindi: 'एंडोस्कोपी प्रक्रियाएं',
-      anatomicalPart: 'nose'
-    },
-    {
-      icon: Mic,
-      title: 'Speech Therapy & AVT',
-      description: 'Comprehensive speech therapy, hearing aid fitting, and auditory verbal therapy services.',
-      hindi: 'स्पीच थेरेपी और एवीटी',
-      anatomicalPart: 'throat'
-    },
-    {
-      icon: Wind,
-      title: 'Sinusitis Treatment',
-      description: 'Advanced treatment for chronic and acute sinusitis with endoscopic sinus surgery options.',
-      hindi: 'साइनसाइटिस उपचार',
-      anatomicalPart: 'nose'
-    },
-    {
-      icon: MessageCircle,
-      title: 'Throat Disorders',
-      description: 'Treatment of vocal cord problems, throat infections, and voice disorders with modern techniques.',
-      hindi: 'गले की समस्याएं',
-      anatomicalPart: 'throat'
-    },
-    {
-      icon: RotateCcw,
-      title: 'Vertigo Treatment',
-      description: 'Comprehensive diagnosis and treatment of balance disorders and vertigo-related conditions.',
-      hindi: 'वर्टिगो उपचार',
-      anatomicalPart: 'ear'
-    },
-    {
-      icon: Scissors,
-      title: 'Polyp Removal',
-      description: 'Minimally invasive removal of nasal and throat polyps using advanced endoscopic techniques.',
-      hindi: 'पॉलिप हटाना',
-      anatomicalPart: 'nose'
+      icon: Stethoscope,
+      title: 'Hearing Aid, Stammering, Speech Therapy, AVT',
+      titleHindi: 'हियरिंग एड, हकलाना, स्पीच थेरेपी, एवीटी'
     },
     {
       icon: Stethoscope,
-      title: 'General ENT Care',
-      description: 'Treatment of ear pain, nose blockage, cold, cough, sneezing, and other common ENT problems.',
-      hindi: 'सामान्य ईएनटी देखभाल',
-      anatomicalPart: 'general'
+      title: 'Endoscopy',
+      titleHindi: 'एंडोस्कोपी'
+    },
+    {
+      icon: Stethoscope,
+      title: 'Vocal Cords',
+      titleHindi: 'वोकल कॉर्ड्स'
+    },
+    {
+      icon: Stethoscope,
+      title: 'Polyp Removal',
+      titleHindi: 'पॉलिप हटाना'
+    },
+    {
+      icon: Stethoscope,
+      title: 'Vertigo',
+      titleHindi: 'वर्टिगो'
+    },
+    {
+      icon: Stethoscope,
+      title: 'General ENT Examination',
+      titleHindi: 'सामान्य ईएनटी जांच'
     }
   ]
 
@@ -133,7 +111,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
           {services.map((service, index) => (
             <motion.div
@@ -161,15 +139,28 @@ export default function Services() {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-medical-red transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-medical-brown font-medium mb-3 hindi-text">
-                    {service.hindi}
-                  </p>
-                  <p className="text-gray-600 leading-relaxed text-sm">
-                    {service.description}
-                  </p>
+                  <div className="medical-card group">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-red-50 rounded-lg group-hover:bg-red-100 transition-colors">
+                        <service.icon className="h-6 w-6 text-red-600" />
+                      </div>
+                      <div className="ml-4">
+                        <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                        <p className="text-sm text-gray-500 hindi">{service.titleHindi}</p>
+                      </div>
+                    </div>
+                    
+
+                    {onBookingClick && (
+                      <button
+                        onClick={onBookingClick}
+                        className="medical-button-secondary w-full mt-4 focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                        aria-label={`Book consultation for ${service.title}`}
+                      >
+                        Book Consultation
+                      </button>
+                    )}
+                  </div>
                 </div>
 
                 {/* Hover effect overlay */}

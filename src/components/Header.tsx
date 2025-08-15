@@ -2,137 +2,193 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Phone, MapPin } from 'lucide-react'
+import { Phone, MapPin, Menu, X, Clock } from 'lucide-react'
 
-export default function Header() {
+interface HeaderProps {
+  onBookingClick: () => void
+}
+
+declare global {
+  interface Window {
+    gtag: (command: string, action: string, parameters: any) => void
+  }
+}
+
+export default function Header({ onBookingClick }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
+  const navItems = [
+    { name: 'Home', href: '#home', hindi: 'होम' },
+    { name: 'Services', href: '#services', hindi: 'सेवाएं' },
+    { name: 'About', href: '#about', hindi: 'परिचय' },
+    { name: 'Locations', href: '#locations', hindi: 'स्थान' },
+    { name: 'Contact', href: '#contact', hindi: 'संपर्क' }
+  ]
+
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 100)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About Doctor' },
-    { href: '#services', label: 'Services' },
-    { href: '#locations', label: 'Locations' },
-    { href: '#contact', label: 'Contact' },
-  ]
+  const handleBookingClick = () => {
+    // Track CTA click event
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', {
+        event_category: 'CTA',
+        event_label: 'Header Book Appointment'
+      })
+    }
+    onBookingClick()
+  }
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-medical-cream/95 backdrop-blur-md border-b-2 border-medical-red shadow-lg' 
-          : 'bg-medical-cream/90 backdrop-blur-sm border-b border-medical-red/30'
-      }`}
-    >
-      {/* Top contact bar */}
-      <div className="bg-medical-red text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <a href="tel:7240868002" className="hover:underline">7240868002</a>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span>Bhopal, Madhya Pradesh</span>
+    <>
+      <header className={`${isScrolled ? 'header-sticky' : 'bg-white shadow-lg sticky top-0'} z-50 transition-all duration-300`}>
+        {/* Top Bar - Hide on scroll */}
+        {!isScrolled && (
+          <div style={{ background: 'var(--brand-primary)' }} className="text-white py-2">
+            <div className="container mx-auto px-4">
+              <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
+                <div className="flex items-center space-x-4 mb-2 sm:mb-0">
+                  <a href="tel:7240868002" className="flex items-center hover:underline">
+                    <Phone className="h-4 w-4 mr-2" />
+                    <span>7240868002</span>
+                  </a>
+                  <div className="flex items-center">
+                    <Clock className="h-4 w-4 mr-2" />
+                    <span>Mon-Sat: 5:10 PM - 9:00 PM</span>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <MapPin className="h-4 w-4 mr-2" />
+                  <span>Bhopal, Madhya Pradesh</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="hidden md:block">
-            <span>Timing: 5:10 PM - 9:00 PM | Sunday: By Appointment</span>
-          </div>
-        </div>
-      </div>
+        )}
 
-      {/* Main navigation */}
-      <nav className="px-4 py-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo */}
-          <motion.div 
-            className="flex flex-col"
-            whileHover={{ scale: 1.02 }}
-          >
-            <h1 className="text-2xl font-bold text-medical-red tracking-wide">
-              AASAAN ENT CLINIC
-            </h1>
-            <p className="text-medical-brown text-sm font-medium hindi-text">
-              आसान ईएनटी क्लिनिक
-            </p>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                className="text-gray-700 hover:text-medical-red font-medium transition-colors duration-200 relative group"
-                whileHover={{ y: -2 }}
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-red transition-all duration-300 group-hover:w-full"></span>
-              </motion.a>
-            ))}
-            <motion.a
-              href="tel:7240868002"
-              className="bg-medical-red text-white px-6 py-2 rounded-full font-semibold hover:bg-medical-darkred transition-colors duration-200 flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+        {/* Main Navigation */}
+        <div className="container mx-auto px-4">
+          <div className={`flex justify-between items-center ${isScrolled ? 'py-2' : 'py-4'}`}>
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center space-x-3"
             >
-              <Phone className="w-4 h-4" />
-              Book Appointment
-            </motion.a>
-          </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/logo.png" 
+                  alt="AASAAN ENT Clinic Logo" 
+                  className={`${isScrolled ? 'h-10 w-10' : 'h-12 w-12'} object-contain transition-all duration-300`}
+                />
+              </div>
+              <div>
+                <h1 className={`font-bold text-gray-800 ${isScrolled ? 'text-lg' : 'text-xl'}`}>
+                  AASAAN ENT CLINIC
+                </h1>
+                {!isScrolled && (
+                  <p className="text-sm hindi" style={{ color: 'var(--brand-primary)' }}>
+                    आसान ईएनटी क्लिनिक
+                  </p>
+                )}
+              </div>
+            </motion.div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-md text-medical-red hover:bg-medical-red/10 transition-colors"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-6">
+              {!isScrolled && navItems.map((item, index) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                  <span className="block text-xs text-gray-500 hindi">{item.hindi}</span>
+                </motion.a>
+              ))}
+            </nav>
+
+            {/* CTA Button & Phone */}
+            <div className="flex items-center gap-3">
+              {isScrolled && (
+                <a 
+                  href="tel:7240868002"
+                  className="hidden sm:flex items-center text-gray-600 hover:text-red-600 transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                </a>
+              )}
+              
+              <button
+                onClick={handleBookingClick}
+                className="medical-button"
+              >
+                Book Appointment
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors ml-2"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
-        <motion.div
-          initial={false}
-          animate={{ height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-md rounded-lg mt-4 border border-medical-red/20"
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-t border-gray-200"
+          >
+            <div className="container mx-auto px-4 py-4">
+              <nav className="flex flex-col space-y-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
+                  >
+                    {item.name}
+                    <span className="block text-xs text-gray-500 hindi">{item.hindi}</span>
+                  </a>
+                ))}
+                <button 
+                  onClick={handleBookingClick}
+                  className="medical-button mt-4"
+                >
+                  Book Appointment
+                </button>
+              </nav>
+            </div>
+          </motion.div>
+        )}
+      </header>
+
+      {/* Mobile Sticky CTA */}
+      <div className="mobile-sticky-cta md:hidden">
+        <button
+          onClick={handleBookingClick}
+          className="medical-button w-full"
         >
-          <div className="py-4 px-6 space-y-4">
-            {navItems.map((item) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                className="block text-gray-700 hover:text-medical-red font-medium py-2 border-b border-gray-100 last:border-b-0 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-                whileHover={{ x: 10 }}
-              >
-                {item.label}
-              </motion.a>
-            ))}
-            <motion.a
-              href="tel:7240868002"
-              className="block bg-medical-red text-white text-center px-6 py-3 rounded-full font-semibold hover:bg-medical-darkred transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-              whileHover={{ scale: 1.02 }}
-            >
-              📞 Book Appointment
-            </motion.a>
-          </div>
-        </motion.div>
-      </nav>
-    </motion.header>
+          <Phone className="w-5 h-5" />
+          Book Appointment
+        </button>
+      </div>
+    </>
   )
 }
