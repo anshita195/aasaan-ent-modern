@@ -11,6 +11,7 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import BookingModal from '@/components/BookingModal'
 import Testimonials from '@/components/Testimonials'
+import YouTubeSection from '@/components/YouTube'
 
 export default function Home() {
   // Keep modal for contact info display, but simplified
@@ -24,6 +25,7 @@ export default function Home() {
       <Header onBookingClick={openContactModal} />
       <Hero onBookingClick={openContactModal} />
       <Testimonials />
+      <YouTubeSection />
       <Services />
       <About />
       <Locations />

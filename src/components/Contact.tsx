@@ -220,6 +220,51 @@ export default function Contact() {
 
           </motion.div>
 
+          {/* Google Maps Embed */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="mt-12"
+          >
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-medical-red/10">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Find Us Here
+                <span className="block text-lg font-normal text-medical-brown hindi-text mt-2">
+                  हमारा स्थान
+                </span>
+              </h3>
+              
+              <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-md">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.5234567890123!2d75.8577258!3d22.7195687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c67b3e8bdeb39%3A0x2d3751fb39c39c0!2sDr.%20Anil%20Kumar%20Jain%20The%20Best%20ENT%20Specialist%20Bhopal!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Dr. Anil Kumar Jain ENT Clinic Location"
+                ></iframe>
+              </div>
+              
+              <div className="mt-4 text-center">
+                <p className="text-gray-700 font-medium">
+                  Krishna Plaza, G-56, Near Narmada Sweet House, Bairagarh, Bhopal, MP 462030
+                </p>
+                <a
+                  href="https://www.google.com/maps/dir//Dr.+Anil+Kumar+Jain+The+Best+ENT+Specialist+Bhopal,+Krishna+Plaza,+G-56,+near+Narmada+Sweet+House,+Bairagarh,+Bhopal,+Madhya+Pradesh+462030/@22.7195687,75.8577258,17z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-3 px-6 py-2 bg-medical-red text-white rounded-lg hover:bg-medical-darkred transition-colors duration-200"
+                >
+                  Get Directions
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Contact Form - COMMENTED OUT FOR NOW */}
           {/*
           <motion.div

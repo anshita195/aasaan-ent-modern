@@ -11,23 +11,13 @@ export default function Services({ onBookingClick }: ServicesProps) {
   const services = [
     {
       icon: Stethoscope,
-      title: 'Hearing Aid, Stammering, Speech Therapy, AVT',
-      titleHindi: 'हियरिंग एड, हकलाना, स्पीच थेरेपी, एवीटी'
+      title: 'General ENT Examination',
+      titleHindi: 'सामान्य ईएनटी जांच'
     },
     {
-      icon: Stethoscope,
-      title: 'Endoscopy',
-      titleHindi: 'एंडोस्कोपी'
-    },
-    {
-      icon: Stethoscope,
-      title: 'Vocal Cords',
-      titleHindi: 'वोकल कॉर्ड्स'
-    },
-    {
-      icon: Stethoscope,
-      title: 'Polyp Removal',
-      titleHindi: 'पॉलिप हटाना'
+      icon: Mic,
+      title: 'Stammering, Speech Therapy, AVT',
+      titleHindi: 'हकलाना, स्पीच थेरेपी, एवीटी'
     },
     {
       icon: Stethoscope,
@@ -36,8 +26,18 @@ export default function Services({ onBookingClick }: ServicesProps) {
     },
     {
       icon: Stethoscope,
-      title: 'General ENT Examination',
-      titleHindi: 'सामान्य ईएनटी जांच'
+      title: 'Polyp Removal',
+      titleHindi: 'पॉलिप हटाना'
+    },
+    {
+      icon: Stethoscope,
+      title: 'Endoscopy',
+      titleHindi: 'एंडोस्कोपी'
+    },
+    {
+      icon: Headphones,
+      title: 'Cochlear Implant, Hearing Aids',
+      titleHindi: 'कॉक्लियर इम्प्लांट, हियरिंग एड'
     }
   ]
 
@@ -170,35 +170,6 @@ export default function Services({ onBookingClick }: ServicesProps) {
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-medical-beige rounded-2xl p-8 border border-medical-red/20">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Need Specialized ENT Care?
-              <span className="block text-lg font-normal text-medical-brown hindi-text mt-2">
-                विशेषज्ञ ईएनटी देखभाल चाहिए?
-              </span>
-            </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Book your consultation today and experience comprehensive ENT care with Dr. Anil Kumar Jain
-            </p>
-            <motion.a
-              href="#contact"
-              className="inline-flex items-center gap-3 bg-medical-red text-white px-8 py-4 rounded-full font-semibold hover:bg-medical-darkred transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Stethoscope className="w-5 h-5" />
-              Schedule Consultation
-            </motion.a>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

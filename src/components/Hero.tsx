@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, Clock, Award, Users, Star, Youtube, MapPin } from 'lucide-react'
+import { Phone, Clock, Award, Users, Star, Youtube, MapPin, Ear, Stethoscope, Activity } from 'lucide-react'
 import Image from 'next/image'
 
 interface HeroProps {
@@ -111,37 +111,37 @@ export default function Hero({ onBookingClick }: HeroProps) {
           </motion.div>
         </div>
 
-        {/* Anatomical Diagrams - Cleaner Layout */}
+        {/* Anatomical Diagrams */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="max-w-4xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center mb-20 mt-16"
         >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-800 mb-2">Our Specializations</h3>
-            <p className="text-gray-600 hindi">हमारी विशेषताएं</p>
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Specializations</h2>
+            <p className="text-xl text-gray-600 hindi">हमारी विशेषताएं</p>
           </div>
 
           <div className="flex justify-center">
-            <div className="grid grid-cols-3 gap-8 max-w-2xl">
-            {/* Right Ear */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl">
+            {/* Ear */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="anatomical-diagram text-center"
             >
-              <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/right_ear.png"
-                  alt="Right Ear Anatomy"
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 mx-auto mb-3"
-                />
-                {/* <p className="font-semibold text-red-600">Right Ear</p>
-                <p className="text-xs text-gray-500 hindi">दाहिना कान</p> */}
-                <p className="font-semibold text-red-600">Ear</p>
-                <p className="text-xs text-gray-500 hindi">कान</p>
+              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
+                <div className="flex justify-center mb-6">
+                  <Image
+                    src="/new_ear.png"
+                    alt="Ear Anatomy"
+                    width={80}
+                    height={80}
+                    className="w-20 h-20 object-contain"
+                  />
+                </div>
+                <p className="font-semibold text-red-600 text-xl">Ear</p>
+                <p className="text-base text-gray-600 hindi mt-2">कान</p>
               </div>
             </motion.div>
 
@@ -168,16 +168,18 @@ export default function Hero({ onBookingClick }: HeroProps) {
               whileHover={{ scale: 1.05 }}
               className="anatomical-diagram text-center"
             >
-              <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/nose.png"
-                  alt="Nose Anatomy"
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 mx-auto mb-3"
-                />
-                <p className="font-semibold text-red-600">Nose</p>
-                <p className="text-xs text-gray-500 hindi">नाक</p>
+              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
+                <div className="flex justify-center mb-6">
+                  <Image
+                    src="/new_nose.png"
+                    alt="Nose Anatomy"
+                    width={80}
+                    height={80}
+                    className="w-20 h-20 object-contain"
+                  />
+                </div>
+                <p className="font-semibold text-red-600 text-xl">Nose</p>
+                <p className="text-base text-gray-600 hindi mt-2">नाक</p>
               </div>
             </motion.div>
 
@@ -186,16 +188,18 @@ export default function Hero({ onBookingClick }: HeroProps) {
               whileHover={{ scale: 1.05 }}
               className="anatomical-diagram text-center"
             >
-              <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/throat.png"
-                  alt="Throat Anatomy"
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 mx-auto mb-3"
-                />
-                <p className="font-semibold text-red-600">Throat</p>
-                <p className="text-xs text-gray-500 hindi">गला</p>
+              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
+                <div className="flex justify-center mb-6">
+                  <Image
+                    src="/new_throat.png"
+                    alt="Throat Anatomy"
+                    width={80}
+                    height={80}
+                    className="w-20 h-20 object-contain"
+                  />
+                </div>
+                <p className="font-semibold text-red-600 text-xl">Throat</p>
+                <p className="text-base text-gray-600 hindi mt-2">गला</p>
               </div>
             </motion.div>
             </div>
@@ -209,18 +213,18 @@ export default function Hero({ onBookingClick }: HeroProps) {
           transition={{ delay: 1.0 }}
           className="text-center mt-12"
         >
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
+          <div className="flex flex-wrap justify-center gap-8 text-base text-gray-600">
             <div className="flex items-center">
-              <Phone className="h-4 w-4 mr-2 text-red-600" />
-              <span className="font-semibold">7240868002</span>
+              <Phone className="h-5 w-5 mr-3 text-red-600" />
+              <span className="font-semibold text-lg">7240868002</span>
             </div>
             <div className="flex items-center">
-              <Clock className="h-4 w-4 mr-2 text-red-600" />
-              <span>Mon-Sat: 5:10 PM - 9:00 PM</span>
+              <Clock className="h-5 w-5 mr-3 text-red-600" />
+              <span className="font-medium">Mon-Sat: 5:10 PM - 9:00 PM</span>
             </div>
             <div className="flex items-center">
-              <MapPin className="h-4 w-4 mr-2 text-red-600" />
-              <span>Bhopal, Madhya Pradesh</span>
+              <MapPin className="h-5 w-5 mr-3 text-red-600" />
+              <span className="font-medium">Bhopal, Madhya Pradesh</span>
             </div>
           </div>
         </motion.div>

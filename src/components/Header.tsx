@@ -51,20 +51,20 @@ export default function Header({ onBookingClick }: HeaderProps) {
         {!isScrolled && (
           <div style={{ background: 'var(--brand-primary)' }} className="text-white py-2">
             <div className="container mx-auto px-4">
-              <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
-                <div className="flex items-center space-x-4 mb-2 sm:mb-0">
+              <div className="flex flex-col sm:flex-row justify-between items-center text-base">
+                <div className="flex items-center space-x-6 mb-2 sm:mb-0">
                   <a href="tel:7240868002" className="flex items-center hover:underline">
-                    <Phone className="h-4 w-4 mr-2" />
-                    <span>7240868002</span>
+                    <Phone className="h-5 w-5 mr-2" />
+                    <span className="font-medium">7240868002</span>
                   </a>
                   <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-2" />
-                    <span>Mon-Sat: 5:10 PM - 9:00 PM</span>
+                    <Clock className="h-5 w-5 mr-2" />
+                    <span className="font-medium">Mon-Sat: 5:10 PM - 9:00 PM</span>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <MapPin className="h-4 w-4 mr-2" />
-                  <span>Bhopal, Madhya Pradesh</span>
+                  <MapPin className="h-5 w-5 mr-2" />
+                  <span className="font-medium">Bhopal, Madhya Pradesh</span>
                 </div>
               </div>
             </div>
