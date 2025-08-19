@@ -1,12 +1,10 @@
-'use client'
-
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 
 export default function TermsOfService() {
   return (
     <>
-      <Header onBookingClick={() => {}} />
+      <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
         <div className="prose lg:prose-xl">
