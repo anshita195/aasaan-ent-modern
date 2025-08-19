@@ -25,8 +25,8 @@ export default function Home() {
       <Header onBookingClick={openContactModal} />
       <Hero onBookingClick={openContactModal} />
       <Testimonials />
-      <YouTubeSection />
       <Services />
+      <YouTubeSection />
       <About />
       <Locations />
       <Contact />
