@@ -1,9 +1,10 @@
-// BOOKING FUNCTIONALITY DISABLED - ALL BUTTONS NOW CALL DIRECTLY
 'use client'
 
+// BOOKING FUNCTIONALITY DISABLED - ALL BUTTONS NOW CALL DIRECTLY
 import { useState } from 'react'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
+
 import About from '@/components/About'
 import Locations from '@/components/Locations'
 import Contact from '@/components/Contact'
@@ -12,6 +13,7 @@ import Header from '@/components/Header'
 import BookingModal from '@/components/BookingModal'
 import Testimonials from '@/components/Testimonials'
 import YouTubeSection from '@/components/YouTube'
+
 
 export default function Home() {
   // Keep modal for contact info display, but simplified
