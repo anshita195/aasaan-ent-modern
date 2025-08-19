@@ -114,3 +114,8 @@ temp/
 *.njsproj
 *.sln
 *.sw?
+
+# Lighthouse reports
+lighthouse-*.json
+lighthouse-report.json
+lighthouse-report-2.json

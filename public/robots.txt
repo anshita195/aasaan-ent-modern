@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aasaan-ent-modern.vercel.app/sitemap.xml

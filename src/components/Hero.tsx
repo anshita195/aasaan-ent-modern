@@ -109,6 +109,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
               width={320}
               height={416}
               className="w-72 h-96 lg:w-80 lg:h-[26rem] rounded-lg shadow-2xl object-cover"
+              priority
             />
           </motion.div>
         </div>
