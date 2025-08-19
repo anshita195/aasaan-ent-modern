@@ -34,15 +34,14 @@ export default function Header({ onBookingClick }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleBookingClick = () => {
-    // Track CTA click event
+  const handleCallClick = () => {
+    // Track call click event
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'click', {
-        event_category: 'CTA',
-        event_label: 'Header Book Appointment'
+      window.gtag('event', 'call_button_click', {
+        source: 'header'
       })
     }
-    onBookingClick()
+    window.location.href = 'tel:+917240868002'
   }
 
   return (
@@ -128,12 +127,13 @@ export default function Header({ onBookingClick }: HeaderProps) {
                 </a>
               )}
               
-              <button
-                onClick={handleBookingClick}
+              <a
+                href="tel:+917240868002"
+                onClick={handleCallClick}
                 className="medical-button"
               >
-                Book Appointment
-              </button>
+                Call +91 7240868002
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -167,12 +167,13 @@ export default function Header({ onBookingClick }: HeaderProps) {
                     <span className="block text-xs text-gray-500 hindi">{item.hindi}</span>
                   </a>
                 ))}
-                <button 
-                  onClick={handleBookingClick}
+                <a 
+                  href="tel:+917240868002"
+                  onClick={handleCallClick}
                   className="medical-button mt-4"
                 >
-                  Book Appointment
-                </button>
+                  Call +91 7240868002
+                </a>
               </nav>
             </div>
           </motion.div>
@@ -181,13 +182,14 @@ export default function Header({ onBookingClick }: HeaderProps) {
 
       {/* Mobile Sticky CTA */}
       <div className="mobile-sticky-cta md:hidden">
-        <button
-          onClick={handleBookingClick}
+        <a
+          href="tel:+917240868002"
+          onClick={handleCallClick}
           className="medical-button w-full"
         >
           <Phone className="w-5 h-5" />
-          Book Appointment
-        </button>
+          Call +91 7240868002
+        </a>
       </div>
     </>
   )

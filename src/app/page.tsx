@@ -1,3 +1,4 @@
+// BOOKING FUNCTIONALITY DISABLED - ALL BUTTONS NOW CALL DIRECTLY
 'use client'
 
 import { useState } from 'react'
@@ -12,22 +13,23 @@ import BookingModal from '@/components/BookingModal'
 import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
+  // Keep modal for contact info display, but simplified
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
-  const openBookingModal = () => setIsBookingModalOpen(true)
-  const closeBookingModal = () => setIsBookingModalOpen(false)
+  const openContactModal = () => setIsContactModalOpen(true)
+  const closeContactModal = () => setIsContactModalOpen(false)
 
   return (
     <main>
-      <Header onBookingClick={openBookingModal} />
-      <Hero onBookingClick={openBookingModal} />
+      <Header onBookingClick={openContactModal} />
+      <Hero onBookingClick={openContactModal} />
       <Testimonials />
-      <Services onBookingClick={openBookingModal} />
+      <Services />
       <About />
       <Locations />
       <Contact />
       <Footer />
-      <BookingModal isOpen={isBookingModalOpen} onClose={closeBookingModal} />
+      <BookingModal isOpen={isContactModalOpen} onClose={closeContactModal} />
     </main>
   )
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Headphones, Search, Mic, Wind, MessageCircle, RotateCcw, Scissors, Stethoscope } from 'lucide-react'
+import { Headphones, Search, Mic, Wind, MessageCircle, RotateCcw, Scissors, Stethoscope, Phone } from 'lucide-react'
 
 interface ServicesProps {
   onBookingClick?: () => void
@@ -151,15 +151,15 @@ export default function Services({ onBookingClick }: ServicesProps) {
                     </div>
                     
 
-                    {onBookingClick && (
-                      <button
-                        onClick={onBookingClick}
-                        className="medical-button-secondary w-full mt-4 focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-                        aria-label={`Book consultation for ${service.title}`}
-                      >
-                        Book Consultation
-                      </button>
-                    )}
+                    {/* Replaced booking with direct call button */}
+                    <a
+                      href="tel:+917240868002"
+                      className="medical-button-secondary w-full mt-4 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 inline-flex items-center justify-center gap-2"
+                      aria-label={`Call for ${service.title} consultation`}
+                    >
+                      <Phone className="w-4 h-4" />
+                      Call to Enquire
+                    </a>
                   </div>
                 </div>
 

@@ -28,86 +28,86 @@ export default function Hero({ onBookingClick }: HeroProps) {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex justify-center mb-6"
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Column: Content */}
+          <div className="text-center md:text-left flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-3">
+                Dr. Anil Kumar Jain
+              </h1>
+              <p className="text-lg lg:text-xl text-gray-600 mb-6">M.S., M.B.B.S. (Ahmedabad)</p>
+              
+              <div className="inline-block bg-red-50 px-6 py-4 rounded-lg mb-6">
+                <h2 className="text-lg lg:text-xl font-bold text-red-600">
+                  ENT Specialist & Cochlear Implant Surgeon
+                </h2>
+                <p className="text-sm text-gray-700 hindi mt-1">
+                  कान, नाक, गला विशेषज्ञ एवं कॉक्लियर इम्प्लांट सर्जन
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8"
+            >
+              <a 
+                href="tel:+917240868002"
+                className="medical-button flex items-center justify-center px-8 py-3"
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Call +91 7240868002
+              </a>
+              <a 
+                href="https://m.youtube.com/channel/UClLl5WoiHRyyPTfUPtx2i0A"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="medical-button-secondary flex items-center justify-center px-8 py-3"
+              >
+                <Youtube className="mr-2 h-5 w-5" />
+                Watch Videos
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="microtrust-row justify-center md:justify-start"
+            >
+              <div className="microtrust-item">
+                <Star className="w-4 h-4 text-yellow-500" />
+                <span>4.9/5 Rating</span>
+              </div>
+              <div className="microtrust-item">
+                <Award className="w-4 h-4 text-red-600" />
+                <span>20+ Years</span>
+              </div>
+              <div className="microtrust-item">
+                <Users className="w-4 h-4 text-blue-600" />
+                <span>10,000+ Patients</span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Image */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="flex justify-center items-center"
           >
             <img 
               src="/doctor.png" 
-              alt="AASAAN ENT Clinic Logo" 
-              className="h-60 w-60 object-contain"
+              alt="Dr. Anil Kumar Jain" 
+              className="w-72 h-96 lg:w-80 lg:h-[26rem] rounded-lg shadow-2xl object-cover"
             />
-          </motion.div>
-
-          {/* Doctor Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mb-8"
-          >
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-2">
-              Dr. Anil Kumar Jain
-            </h1>
-            <p className="text-xl text-gray-600 mb-4">M.S., M.B.B.S. (Ahmedabad)</p>
-            
-            <div className="inline-block bg-red-50 px-6 py-3 rounded-lg">
-              <h2 className="text-xl font-bold text-red-600">
-                ENT Specialist & Cochlear Implant Surgeon
-              </h2>
-              <p className="text-sm text-gray-700 hindi">
-                कान, नाक, गला विशेषज्ञ एवं कॉक्लियर इम्प्लांट सर्जन
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Action Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
-          >
-            <button 
-              onClick={onBookingClick}
-              className="medical-button flex items-center justify-center px-8 py-3"
-            >
-              <Phone className="mr-2 h-5 w-5" />
-              Book Appointment
-            </button>
-            <a 
-              href="https://m.youtube.com/channel/UClLl5WoiHRyyPTfUPtx2i0A"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="medical-button-secondary flex items-center justify-center px-8 py-3"
-            >
-              <Youtube className="mr-2 h-5 w-5" />
-              Watch Videos
-            </a>
-          </motion.div>
-
-          {/* Microtrust Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="microtrust-row justify-center mb-12"
-          >
-            <div className="microtrust-item">
-              <Star className="w-4 h-4 text-yellow-500" />
-              <span>4.9/5 Rating</span>
-            </div>
-            <div className="microtrust-item">
-              <Award className="w-4 h-4 text-red-600" />
-              <span>20+ Years</span>
-            </div>
-            <div className="microtrust-item">
-              <Users className="w-4 h-4 text-blue-600" />
-              <span>10,000+ Patients</span>
-            </div>
           </motion.div>
         </div>
 

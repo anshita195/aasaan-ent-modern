@@ -1,42 +1,46 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { Phone, Clock, Youtube, Send, User, Mail, MessageSquare, Calendar } from 'lucide-react'
-import { useState } from 'react'
+import { motion } from 'framer-motion';
+import { Phone, Clock, Youtube } from 'lucide-react';
+// import { Send, User, Mail, MessageSquare, Calendar } from 'lucide-react';
+// import { useState } from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    service: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [notification, setNotification] = useState<{ message: string; type: string } | null>(null)
+  // Form state commented out since form is disabled
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   phone: '',
+  //   email: '',
+  //   service: '',
+  //   message: ''
+  // });
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [notification, setNotification] = useState<{ message: string; type: string } | null>(null);
 
   const contactInfo = [
     {
-      icon: Phone,
-      title: 'Phone',
-      content: '7240868002',
-      link: 'tel:7240868002'
+      icon: (props: any) => <Phone {...props} />,
+      title: 'WhatsApp',
+      content: 'Chat on WhatsApp',
+      link: 'https://wa.me/917240868002'
     },
     {
-      icon: Clock,
+      icon: (props: any) => <Clock {...props} />,
       title: 'Clinic Hours',
       content: '5:10 PM - 9:00 PM',
       subtitle: 'Sunday: By Appointment Only'
     },
     {
-      icon: Youtube,
+      icon: (props: any) => <Youtube {...props} />,
       title: 'YouTube Channel',
       content: 'AasaanLife4U',
       subtitle: 'Health tips and educational content',
       link: 'https://youtube.com/@AasaanLife4U'
     }
-  ]
+  ];
 
+  // Form-related functions commented out since form is disabled
+  /*
   const services = [
     'Cochlear Implant',
     'Endoscopy',
@@ -44,62 +48,62 @@ export default function Contact() {
     'Sinusitis Treatment',
     'General ENT',
     'Other'
-  ]
+  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
   const validateForm = () => {
     if (!formData.name || !formData.phone || !formData.service) {
-      showNotification('Please fill in all required fields.', 'error')
-      return false
+      showNotification('Please fill in all required fields.', 'error');
+      return false;
     }
 
-    const phoneRegex = /^[6-9]\d{9}$/
-    if (!phoneRegex.test(formData.phone.replace(/\D/g, '').slice(-10))) {
-      showNotification('Please enter a valid 10-digit phone number.', 'error')
-      return false
+    const phoneRegex = /^[6-9]\\d{9}$/;
+    if (!phoneRegex.test(formData.phone.replace(/\\D/g, '').slice(-10))) {
+      showNotification('Please enter a valid 10-digit phone number.', 'error');
+      return false;
     }
 
     if (formData.email) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
-        showNotification('Please enter a valid email address.', 'error')
-        return false
+        showNotification('Please enter a valid email address.', 'error');
+        return false;
       }
     }
 
-    return true
-  }
+    return true;
+  };
 
   const createWhatsAppMessage = () => {
-    let whatsappText = `*New Appointment Inquiry - AASAAN ENT Clinic*\n\n`
-    whatsappText += `*Name:* ${formData.name}\n`
-    whatsappText += `*Phone:* ${formData.phone}\n`
-    if (formData.email) whatsappText += `*Email:* ${formData.email}\n`
-    whatsappText += `*Service:* ${formData.service}\n`
-    if (formData.message) whatsappText += `*Message:* ${formData.message}\n`
-    whatsappText += `\n*Clinic Timings:* 5:10 PM - 9:00 PM\n`
-    whatsappText += `*Sunday:* By Appointment Only\n\n`
-    whatsappText += `Please confirm my appointment. Thank you!`
-    return whatsappText
-  }
+    let whatsappText = `*New Appointment Inquiry - AASAAN ENT Clinic*\\n\\n`;
+    whatsappText += `*Name:* ${formData.name}\\n`;
+    whatsappText += `*Phone:* ${formData.phone}\\n`;
+    if (formData.email) whatsappText += `*Email:* ${formData.email}\\n`;
+    whatsappText += `*Service:* ${formData.service}\\n`;
+    if (formData.message) whatsappText += `*Message:* ${formData.message}\\n`;
+    whatsappText += `\\n*Clinic Timings:* 5:10 PM - 9:00 PM\\n`;
+    whatsappText += `*Sunday:* By Appointment Only\\n\\n`;
+    whatsappText += `Please confirm my appointment. Thank you!`;
+    return whatsappText;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     
-    if (!validateForm()) return
+    if (!validateForm()) return;
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     // Simulate API call delay
     setTimeout(() => {
-      const whatsappMessage = createWhatsAppMessage()
-      window.open(`https://wa.me/917240868002?text=${encodeURIComponent(whatsappMessage)}`, '_blank')
+      const whatsappMessage = createWhatsAppMessage();
+      window.open(`https://wa.me/917240868002?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
       
       // Reset form
       setFormData({
@@ -108,17 +112,18 @@ export default function Contact() {
         email: '',
         service: '',
         message: ''
-      })
+      });
       
-      setIsSubmitting(false)
-      showNotification('Message prepared! WhatsApp will open to send your inquiry.', 'success')
-    }, 1000)
-  }
+      setIsSubmitting(false);
+      showNotification('Message prepared! WhatsApp will open to send your inquiry.', 'success');
+    }, 1000);
+  };
 
   const showNotification = (message: string, type: string) => {
-    setNotification({ message, type })
-    setTimeout(() => setNotification(null), 5000)
-  }
+    setNotification({ message, type });
+    setTimeout(() => setNotification(null), 5000);
+  };
+  */
 
   return (
     <section id="contact" className="py-20 bg-white relative overflow-hidden">
@@ -128,15 +133,16 @@ export default function Contact() {
         <div className="absolute bottom-10 left-10 w-24 h-24 border border-medical-red rounded-full"></div>
       </div>
 
-      {/* Notification */}
+      {/* Notification - commented out since form is disabled */}
+      {/*
       {notification && (
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           className={`fixed top-24 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm ${
-            notification.type === 'success' 
-              ? 'bg-green-100 text-green-800 border-l-4 border-green-500' 
+            notification.type === 'success'
+              ? 'bg-green-100 text-green-800 border-l-4 border-green-500'
               : 'bg-red-100 text-red-800 border-l-4 border-red-500'
           }`}
         >
@@ -149,6 +155,7 @@ export default function Contact() {
           </button>
         </motion.div>
       )}
+      */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -171,7 +178,7 @@ export default function Contact() {
           <div className="w-24 h-1 bg-medical-red mx-auto mt-6"></div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="max-w-4xl mx-auto">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -195,7 +202,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h4>
                   {info.link ? (
-                    <a 
+                    <a
                       href={info.link}
                       className="text-medical-red font-semibold hover:text-medical-darkred hover:underline transition-colors duration-200 block mb-1"
                     >
@@ -211,31 +218,10 @@ export default function Contact() {
               </motion.div>
             ))}
 
-            {/* Quick Actions */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-medical-red to-medical-darkred rounded-2xl p-8 text-white"
-            >
-              <h3 className="text-2xl font-bold mb-4">Emergency Contact</h3>
-              <p className="mb-6 opacity-90">
-                For urgent ENT concerns, call us directly during clinic hours
-              </p>
-              <motion.a
-                href="tel:7240868002"
-                className="bg-white text-medical-red px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 inline-flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Phone className="w-5 h-5" />
-                Call 7240868002
-              </motion.a>
-            </motion.div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact Form - COMMENTED OUT FOR NOW */}
+          {/*
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -366,8 +352,9 @@ export default function Contact() {
               </form>
             </div>
           </motion.div>
+          */}
         </div>
       </div>
     </section>
-  )
+  );
 }
