@@ -84,15 +84,15 @@ export default function Header({ onBookingClick }: HeaderProps) {
                 <img 
                   src="/logo.png" 
                   alt="AASAAN ENT Clinic Logo" 
-                  className={`${isScrolled ? 'h-10 w-10' : 'h-12 w-12'} object-contain transition-all duration-300`}
+                  className={`${isScrolled ? 'h-12 w-12' : 'h-16 w-16'} object-contain transition-all duration-300`}
                 />
               </div>
               <div>
-                <h1 className={`font-bold text-gray-800 ${isScrolled ? 'text-lg' : 'text-xl'}`}>
+                <h1 className={`font-bold text-gray-800 ${isScrolled ? 'text-xl' : 'text-2xl'}`}>
                   AASAAN ENT CLINIC
                 </h1>
                 {!isScrolled && (
-                  <p className="text-sm hindi" style={{ color: 'var(--brand-primary)' }}>
+                  <p className="text-base hindi" style={{ color: 'var(--brand-primary)' }}>
                     आसान ईएनटी क्लिनिक
                   </p>
                 )}
@@ -108,10 +108,10 @@ export default function Header({ onBookingClick }: HeaderProps) {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium"
+                  className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-lg"
                 >
                   {item.name}
-                  <span className="block text-xs text-gray-500 hindi">{item.hindi}</span>
+                  <span className="block text-sm text-gray-500 hindi">{item.hindi}</span>
                 </motion.a>
               ))}
             </nav>
@@ -161,10 +161,10 @@ export default function Header({ onBookingClick }: HeaderProps) {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
+                    className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2 text-lg"
                   >
                     {item.name}
-                    <span className="block text-xs text-gray-500 hindi">{item.hindi}</span>
+                    <span className="block text-sm text-gray-500 hindi">{item.hindi}</span>
                   </a>
                 ))}
                 <a 
