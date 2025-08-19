@@ -58,7 +58,7 @@ export default function YouTubeSection() {
             स्वास्थ्य शिक्षा वीडियो
           </p>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Watch Dr. Anil Kumar Jain's educational videos for better health awareness and preventive care
+            Watch Dr. Anil Kumar Jain&apos;s educational videos for better health awareness and preventive care
           </p>
         </motion.div>
 

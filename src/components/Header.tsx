@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { Phone, MapPin, Menu, X, Clock } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X, Phone, Clock, MapPin } from 'lucide-react'
+import Image from 'next/image'
 
 interface HeaderProps {
   onBookingClick: () => void
@@ -81,9 +82,11 @@ export default function Header({ onBookingClick }: HeaderProps) {
               className="flex items-center space-x-3"
             >
               <div className="flex-shrink-0">
-                <img 
+                <Image 
                   src="/logo.png" 
                   alt="AASAAN ENT Clinic Logo" 
+                  width={64}
+                  height={64}
                   className={`${isScrolled ? 'h-12 w-12' : 'h-16 w-16'} object-contain transition-all duration-300`}
                 />
               </div>

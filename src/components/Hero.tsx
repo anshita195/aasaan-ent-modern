@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, Clock, Award, Users, Star, Youtube, MapPin, Ear, Stethoscope, Activity } from 'lucide-react'
+import { Phone, Clock, MapPin, Calendar, Users, Award, Star, Youtube } from 'lucide-react'
 import Image from 'next/image'
 
 interface HeroProps {
@@ -103,9 +103,11 @@ export default function Hero({ onBookingClick }: HeroProps) {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="flex justify-center items-center"
           >
-            <img 
+            <Image 
               src="/doctor.png" 
               alt="Dr. Anil Kumar Jain" 
+              width={320}
+              height={416}
               className="w-72 h-96 lg:w-80 lg:h-[26rem] rounded-lg shadow-2xl object-cover"
             />
           </motion.div>
