@@ -108,6 +108,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
               alt="Dr. Anil Kumar Jain" 
               width={320}
               height={416}
+              priority
               className="w-72 h-96 lg:w-80 lg:h-[26rem] rounded-lg shadow-2xl object-cover"
             />
           </motion.div>
@@ -133,12 +134,13 @@ export default function Hero({ onBookingClick }: HeroProps) {
               className="anatomical-diagram text-center"
             >
               <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
                   <Image
                     src="/new_ear.png"
                     alt="Ear Anatomy"
                     width={80}
                     height={80}
+                    loading="lazy"
                     className="w-20 h-20 object-contain"
                   />
                 </div>
@@ -171,12 +173,13 @@ export default function Hero({ onBookingClick }: HeroProps) {
               className="anatomical-diagram text-center"
             >
               <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
                   <Image
                     src="/new_nose.png"
                     alt="Nose Anatomy"
                     width={80}
                     height={80}
+                    loading="lazy"
                     className="w-20 h-20 object-contain"
                   />
                 </div>
@@ -191,12 +194,13 @@ export default function Hero({ onBookingClick }: HeroProps) {
               className="anatomical-diagram text-center"
             >
               <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
                   <Image
                     src="/new_throat.png"
                     alt="Throat Anatomy"
                     width={80}
                     height={80}
+                    loading="lazy"
                     className="w-20 h-20 object-contain"
                   />
                 </div>
