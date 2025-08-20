@@ -176,7 +176,7 @@ export default function YouTubeSection() {
                     {video.title}
                   </h4>
                   <p className="text-sm text-gray-600 mb-2">{video.description}</p>
-                  <p className="text-xs text-gray-500 hindi mb-3">{video.hindi}</p>
+                  <p className="text-xs text-gray-600 hindi mb-3">{video.hindi}</p>
                   
                   <a
                     href={video.videoUrl}
@@ -223,7 +223,7 @@ export default function YouTubeSection() {
               <p className="text-gray-600 mb-2 text-lg">
                 Subscribe for expert ENT health tips & educational content
               </p>
-              <p className="text-gray-500 mb-6 hindi text-base">
+              <p className="text-gray-600 mb-6 hindi text-base">
                 विशेषज्ञ ईएनटी स्वास्थ्य सुझाव और शैक्षिक सामग्री के लिए सब्सक्राइब करें
               </p>
               

@@ -107,8 +107,9 @@ export default function Locations() {
                       <button
                         onClick={() => copyAddress(location.address, location.id)}
                         className="mt-2 text-xs text-medical-red hover:text-medical-darkred flex items-center gap-1 opacity-0 group-hover/address:opacity-100 transition-opacity duration-200"
+                        aria-label={`Copy address: ${location.address}`}
                       >
-                        <Copy className="w-3 h-3" />
+                        <Copy className="w-3 h-3" aria-hidden="true" />
                         {copiedAddress === location.id ? 'Copied!' : 'Click to copy address'}
                       </button>
                     </div>
@@ -176,11 +177,12 @@ export default function Locations() {
                       const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`
                       window.open(mapsUrl, '_blank')
                     }}
-                    className="flex-1 border-2 border-medical-red text-medical-red px-6 py-3 rounded-full font-semibold hover:bg-medical-red hover:text-white transition-colors duration-200 flex items-center justify-center gap-2"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    className="flex-1 bg-gray-100 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center gap-2"
+                    aria-label={`Get directions to ${location.name}`}
                   >
-                    <MapPin className="w-4 h-4" />
+                    <MapPin className="w-4 h-4" aria-hidden="true" />
                     Get Directions
                   </motion.button>
                 </div>

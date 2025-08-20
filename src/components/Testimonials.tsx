@@ -123,7 +123,7 @@ export default function Testimonials() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">{review.name}</h3>
-                    <p className="text-sm text-gray-500">{review.timeAgo}</p>
+                    <p className="text-sm text-gray-600">{review.timeAgo}</p>
                   </div>
                 </div>
                 <svg className="w-6 h-6" viewBox="0 0 24 24" aria-label="Google logo">
@@ -148,7 +148,7 @@ export default function Testimonials() {
 
               {/* Click to view on Google */}
               <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                <span className="text-xs text-gray-500">Posted on Google</span>
+                <span className="text-xs text-gray-600">Posted on Google</span>
                 <ExternalLink className="w-4 h-4 text-gray-400" />
               </div>
             </motion.div>

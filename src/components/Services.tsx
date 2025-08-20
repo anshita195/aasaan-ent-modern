@@ -146,7 +146,7 @@ export default function Services({ onBookingClick }: ServicesProps) {
                       </div>
                       <div className="ml-4">
                         <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
-                        <p className="text-sm text-gray-500 hindi">{service.titleHindi}</p>
+                        <p className="text-sm text-gray-600 hindi">{service.titleHindi}</p>
                       </div>
                     </div>
                     

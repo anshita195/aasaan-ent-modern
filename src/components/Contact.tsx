@@ -150,6 +150,7 @@ export default function Contact() {
           <button
             onClick={() => setNotification(null)}
             className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+            aria-label="Close notification"
           >
             ×
           </button>
@@ -379,17 +380,16 @@ export default function Contact() {
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-medical-red text-white py-4 px-6 rounded-lg font-semibold hover:bg-medical-darkred disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center gap-3"
-                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  aria-label="Send contact message"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true"></div>
                       Sending...
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5" />
+                      <Send className="w-5 h-5" aria-hidden="true" />
                       Send Message
                     </>
                   )}
