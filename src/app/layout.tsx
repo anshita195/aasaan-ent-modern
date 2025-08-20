@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'AASAAN ENT Clinic - Dr. Anil Kumar Jain | Best ENT Specialist in Bhopal',
-  description: 'AASAAN ENT Clinic by Dr. Anil Kumar Jain - Leading ENT Specialist in Bhopal with 24+ years experience. Expert in Cochlear Implant, Endoscopy, and all ENT treatments.',
-  keywords: 'ENT specialist Bhopal, Cochlear Implant surgeon, Dr Anil Kumar Jain, ENT doctor Bhopal, ear nose throat specialist, endoscopy, speech therapy, hearing aid, sinusitis treatment',
+  title: 'Dr. Anil Kumar Jain - Best ENT Specialist in Bhopal | AASAAN ENT Clinic',
+  description: 'Expert ENT care by Dr. Anil Kumar Jain (M.S., M.B.B.S.) - Cochlear Implant Surgeon with 20+ years experience. Call 7240868002 for consultation in Bhopal.',
+  keywords: 'ENT specialist Bhopal, cochlear implant surgeon, ear nose throat doctor, Dr Anil Kumar Jain, AASAAN ENT Clinic',
   authors: [{ name: 'Dr. Anil Kumar Jain' }],
   creator: 'AASAAN ENT Clinic',
   publisher: 'AASAAN ENT Clinic',
@@ -87,11 +88,26 @@ export default function RootLayout({
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
+                    page_title: document.title,
+                    page_location: window.location.href,
+                    custom_map: {
+                      custom_parameter_1: 'ent_clinic_visit'
+                    }
+                  });
                 `,
               }}
             />
           </>
+        )}
+        
+        {/* Umami Analytics */}
+        {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+          <script
+            async
+            src="https://analytics.umami.is/script.js"
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+          />
         )}
         <script
           type="application/ld+json"
@@ -174,6 +190,16 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Initialize Sentry
+              if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+                import('/src/lib/sentry.js').then(module => module.initSentry());
+              }
+            `,
+          }}
+        />
         {children}
       </body>
     </html>
