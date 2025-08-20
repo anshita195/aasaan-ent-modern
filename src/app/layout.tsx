@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Toaster } from 'sonner'
-import { MotionConfig } from 'framer-motion'
 import './globals.css'
-import WhatsAppCTA from '@/components/WhatsAppCTA'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -42,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AASAAN ENT Clinic - Dr. Anil Kumar Jain',
-    description: 'Leading ENT Specialist in Bhopal with 24+ years experience.',
+    description: 'Leading ENT Specialist in Bhopal with 20+ years experience.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -69,10 +66,27 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#d32f2f" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Google Analytics 4 */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+                `,
+              }}
+            />
+          </>
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -152,11 +166,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <MotionConfig isStatic={true}>
-          <Toaster position="top-center" richColors />
-          <WhatsAppCTA />
-          {children}
-        </MotionConfig>
+        {children}
       </body>
     </html>
   )

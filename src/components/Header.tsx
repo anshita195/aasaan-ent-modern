@@ -6,7 +6,7 @@ import { Menu, X, Phone, Clock, MapPin } from 'lucide-react'
 import Image from 'next/image'
 
 interface HeaderProps {
-  onBookingClick?: () => void
+  onBookingClick: () => void
 }
 
 declare global {

@@ -23,7 +23,7 @@ export default function Locations() {
       id: 'sant-hirdaram',
       name: 'Sant Hirdaram Nagar Clinic',
       regNumber: 'MP-6753',
-      address: 'G-56 Krishna Plaza, Near Nerbada Sweet House, Sant Hirdaram Nagar, Bairagarh, Bhopal - 462030',
+      address: 'G-56 Krishna Plaza, Near Prarthna Medical Center, Near Narmada Sweet House, Sant Hirdaram Nagar, Bairagarh, Bhopal - 462030',
       timing: '5:10 PM - 9:00 PM',
       phone: '7240868002',
       specialNote: 'Sunday - Only on Appointment',
@@ -160,32 +160,30 @@ export default function Locations() {
                   )}
                 </div>
 
-                {/* Action Buttons - Only show for the primary (first) location */}
-                {index === 0 && (
-                  <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-medical-beige">
-                    <motion.a
-                      href={`tel:${location.phone}`}
-                      className="flex-1 bg-medical-red text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-medical-darkred transition-colors duration-200 flex items-center justify-center gap-2"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Phone className="w-4 h-4" />
-                      Call Now
-                    </motion.a>
-                    <motion.button
-                      onClick={() => {
-                        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`
-                        window.open(mapsUrl, '_blank')
-                      }}
-                      className="flex-1 border-2 border-medical-red text-medical-red px-6 py-3 rounded-full font-semibold hover:bg-medical-red hover:text-white transition-colors duration-200 flex items-center justify-center gap-2"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <MapPin className="w-4 h-4" />
-                      Get Directions
-                    </motion.button>
-                  </div>
-                )}
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-medical-beige">
+                  <motion.a
+                    href={`tel:${location.phone}`}
+                    className="flex-1 bg-medical-red text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-medical-darkred transition-colors duration-200 flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Phone className="w-4 h-4" />
+                    Call Now
+                  </motion.a>
+                  <motion.button
+                    onClick={() => {
+                      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`
+                      window.open(mapsUrl, '_blank')
+                    }}
+                    className="flex-1 border-2 border-medical-red text-medical-red px-6 py-3 rounded-full font-semibold hover:bg-medical-red hover:text-white transition-colors duration-200 flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <MapPin className="w-4 h-4" />
+                    Get Directions
+                  </motion.button>
+                </div>
               </div>
             </motion.div>
           ))}

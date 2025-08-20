@@ -88,8 +88,6 @@ export default function Footer() {
                 { href: '#services', label: 'Services' },
                 { href: '#locations', label: 'Locations' },
                 { href: '#contact', label: 'Contact' },
-                { href: '/privacy-policy', label: 'Privacy Policy' },
-                { href: '/terms-of-service', label: 'Terms of Service' },
               ].map((link) => (
                 <a
                   key={link.href}
