@@ -6,4 +6,18 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <url>
+    <loc>https://aasaanentclinic.vercel.app/privacy-policy</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://aasaanentclinic.vercel.app/terms-of-service</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
