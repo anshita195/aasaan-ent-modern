@@ -1,5 +1,23 @@
 import '@testing-library/jest-dom'
 
+// Extend Jest matchers
+expect.extend({
+  toBeInTheDocument: (received) => {
+    const pass = received !== null
+    return {
+      message: () => `expected element ${pass ? 'not ' : ''}to be in document`,
+      pass,
+    }
+  },
+  toHaveAttribute: (received, attr, value) => {
+    const pass = received && received.getAttribute && received.getAttribute(attr) === value
+    return {
+      message: () => `expected element ${pass ? 'not ' : ''}to have attribute ${attr}=${value}`,
+      pass,
+    }
+  }
+})
+
 // Mock Next.js router
 jest.mock('next/router', () => ({
   useRouter() {
@@ -40,6 +58,10 @@ jest.mock('framer-motion', () => ({
     h2: 'h2',
     p: 'p',
     button: 'button',
+    a: 'a',
+    header: 'header',
+    nav: 'nav',
+    span: 'span',
   },
   AnimatePresence: ({ children }) => children,
 }))
