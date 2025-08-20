@@ -71,8 +71,9 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               <button
                 onClick={handleCallClick}
                 className="medical-button w-full text-lg py-4"
+                aria-label="Call Dr. Anil Kumar Jain at +91 7240868002 to book appointment"
               >
-                <Phone className="w-6 h-6" />
+                <Phone className="w-6 h-6" aria-hidden="true" />
                 Call +91 7240868002
               </button>
               

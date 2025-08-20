@@ -2,8 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { Play, Youtube, ExternalLink } from 'lucide-react'
+import { useState, useCallback } from 'react'
 
 export default function YouTubeSection() {
+  const [loadedVideos, setLoadedVideos] = useState<Set<string>>(new Set())
+  
+  const loadVideo = useCallback((videoId: string) => {
+    setLoadedVideos(prev => new Set(prev).add(videoId))
+  }, [])
+
   const featuredPlaylist = {
     title: 'Aapka Swasth - Your Health',
     description: 'General healthcare benefits for the public',
@@ -81,14 +88,27 @@ export default function YouTubeSection() {
             </div>
             
             <div className="aspect-video max-w-2xl mx-auto">
-              <iframe
-                src={featuredPlaylist.embedUrl}
-                title={featuredPlaylist.title}
-                className="w-full h-full rounded-lg"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              {loadedVideos.has('playlist') ? (
+                <iframe
+                  src={featuredPlaylist.embedUrl}
+                  title={featuredPlaylist.title}
+                  className="w-full h-full rounded-lg"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              ) : (
+                <div 
+                  className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors"
+                  onClick={() => loadVideo('playlist')}
+                >
+                  <div className="text-center">
+                    <Play className="w-16 h-16 mx-auto mb-4 text-red-600" />
+                    <p className="text-gray-700 font-medium">Click to load playlist</p>
+                  </div>
+                </div>
+              )}
             </div>
             
             <div className="p-4 bg-gray-50 flex justify-center">
@@ -131,14 +151,24 @@ export default function YouTubeSection() {
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="aspect-video relative group cursor-pointer">
-                  <iframe
-                    src={video.embedUrl}
-                    title={video.title}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  {loadedVideos.has(video.videoId) ? (
+                    <iframe
+                      src={video.embedUrl}
+                      title={video.title}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                    ></iframe>
+                  ) : (
+                    <div 
+                      className="w-full h-full bg-gray-200 flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors"
+                      onClick={() => loadVideo(video.videoId)}
+                    >
+                      <Play className="w-12 h-12 text-red-600" />
+                    </div>
+                  )}
                 </div>
                 
                 <div className="p-4">

@@ -34,7 +34,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
             >
               <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-3">
                 Dr. Anil Kumar Jain
@@ -54,14 +54,15 @@ export default function Hero({ onBookingClick }: HeroProps) {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8"
             >
               <a 
                 href="tel:+917240868002"
                 className="medical-button flex items-center justify-center px-8 py-3"
+                aria-label="Call Dr. Anil Kumar Jain at +91 7240868002"
               >
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
                 Call +91 7240868002
               </a>
               <a 
@@ -69,8 +70,9 @@ export default function Hero({ onBookingClick }: HeroProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="medical-button-secondary flex items-center justify-center px-8 py-3"
+                aria-label="Watch Dr. Anil Kumar Jain's health education videos on YouTube"
               >
-                <Youtube className="mr-2 h-5 w-5" />
+                <Youtube className="mr-2 h-5 w-5" aria-hidden="true" />
                 Watch Videos
               </a>
             </motion.div>
@@ -78,7 +80,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              transition={{ delay: 0.3, duration: 0.4 }}
               className="microtrust-row justify-center md:justify-start"
             >
               <div className="microtrust-item">
