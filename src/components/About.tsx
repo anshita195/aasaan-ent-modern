@@ -89,10 +89,14 @@ export default function About() {
 
             {/* Education */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-medical-red/10">
-              <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              {/* <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
                 <GraduationCap className="w-6 h-6 text-medical-red" />
                 Education & Qualifications
-              </h4>
+              </h4> */}
+              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              <GraduationCap className="w-6 h-6 text-medical-red" />
+              Education & Qualifications
+            </h3>
               <div className="space-y-4">
                 {education.map((edu, index) => (
                   <motion.div

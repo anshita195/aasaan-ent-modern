@@ -42,7 +42,10 @@ export default function Hero({ onBookingClick }: HeroProps) {
               <p className="text-lg lg:text-xl text-gray-600 mb-6">M.S., M.B.B.S. (Ahmedabad)</p>
               
               <div className="inline-block bg-red-50 px-6 py-4 rounded-lg mb-6">
-                <h2 className="text-lg lg:text-xl font-bold text-red-600">
+                {/* <h2 className="text-lg lg:text-xl font-bold text-red-600">
+                  ENT Specialist & Cochlear Implant Surgeon
+                </h2> */}
+                <h2 className="text-lg lg:text-xl font-bold text-red-800">
                   ENT Specialist & Cochlear Implant Surgeon
                 </h2>
                 <p className="text-sm text-gray-700 hindi mt-1">
@@ -124,8 +127,10 @@ export default function Hero({ onBookingClick }: HeroProps) {
           className="text-center mb-20 mt-16"
         >
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Specializations</h2>
-            <p className="text-xl text-gray-600 hindi">हमारी विशेषताएं</p>
+            {/* <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Specializations</h2>
+            <p className="text-xl text-gray-600 hindi">हमारी विशेषताएं</p> */}
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Specializations</h2>
+            <p className="text-xl text-gray-700 hindi">हमारी विशेषताएं</p>
           </div>
 
           <div className="flex justify-center">
