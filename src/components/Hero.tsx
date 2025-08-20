@@ -129,8 +129,10 @@ export default function Hero({ onBookingClick }: HeroProps) {
           <div className="mb-12">
             {/* <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Specializations</h2>
             <p className="text-xl text-gray-600 hindi">हमारी विशेषताएं</p> */}
+            {/* <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Specializations</h2>
+            <p className="text-xl text-gray-700 hindi">हमारी विशेषताएं</p> */}
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Specializations</h2>
-            <p className="text-xl text-gray-700 hindi">हमारी विशेषताएं</p>
+<p className="text-xl text-gray-800 hindi">हमारी विशेषताएं</p>
           </div>
 
           <div className="flex justify-center">

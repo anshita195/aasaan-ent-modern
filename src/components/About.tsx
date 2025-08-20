@@ -119,10 +119,10 @@ export default function About() {
 
             {/* Experience */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-medical-red/10">
-              <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
                 <Briefcase className="w-6 h-6 text-medical-red" />
                 Professional Experience
-              </h4>
+              </h3>
               <div className="space-y-3">
                 {experience.map((exp, index) => (
                   <motion.div
@@ -151,13 +151,13 @@ export default function About() {
           >
             {/* Vision */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-medical-red/10">
-              <h4 className="text-2xl font-bold text-medical-red mb-6 flex items-center gap-3">
+              <h3 className="text-2xl font-bold text-medical-red mb-6 flex items-center gap-3">
                 <Eye className="w-6 h-6" />
                 Our Vision
                 <span className="text-sm font-normal text-medical-brown hindi-text ml-2">
                   हमारा दृष्टिकोण
                 </span>
-              </h4>
+              </h3>
               <p className="text-gray-700 leading-relaxed text-lg">
                 To be your trusted Specialist Doctor in ENT health—where expert care meets 
                 genuine compassion and every patient feels truly heard, understood, respected, 
@@ -168,13 +168,13 @@ export default function About() {
 
             {/* Mission */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-medical-red/10">
-              <h4 className="text-2xl font-bold text-medical-red mb-6 flex items-center gap-3">
+              <h3 className="text-2xl font-bold text-medical-red mb-6 flex items-center gap-3">
                 <Heart className="w-6 h-6" />
                 Our Mission
                 <span className="text-sm font-normal text-medical-brown hindi-text ml-2">
                   हमारा मिशन
                 </span>
-              </h4>
+              </h3>
               <div className="space-y-4 mb-6">
                 {mission.map((item, index) => (
                   <motion.div
@@ -201,9 +201,9 @@ export default function About() {
 
             {/* AASAAN Meaning */}
             <div className="bg-gradient-to-br from-medical-red to-medical-darkred rounded-2xl p-8 text-white shadow-lg">
-              <h4 className="text-2xl font-bold mb-4">
+              <h3 className="text-2xl font-bold mb-4">
                 AASAAN ENT Clinic - What our name refers to?
-              </h4>
+              </h3>
               <div className="space-y-3 text-lg">
                 <p><strong>AASAAN</strong> is a short form of</p>
                 <p><strong className="text-yellow-200">A</strong>ASHI, <strong className="text-yellow-200">A</strong>NSHITA, <strong className="text-yellow-200">SA</strong>NYOGITA, <strong className="text-yellow-200">AN</strong>IL</p>
@@ -220,10 +220,10 @@ export default function About() {
             </div>
             {/* Memberships */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-medical-red/10">
-              <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
                 <Award className="w-6 h-6 text-medical-red" />
                 Professional Memberships
-              </h4>
+              </h3>
               <div className="space-y-3">
                 {memberships.map((membership, index) => (
                   <motion.div
