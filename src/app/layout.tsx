@@ -71,6 +71,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#d32f2f" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
+        {/* Preconnect to critical origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        
         {/* Google Analytics 4 */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>
@@ -93,7 +99,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["Physician", "LocalBusiness"],
+              "@id": "https://aasaan-ent-modern.vercel.app/#organization",
               "name": "AASAAN ENT Clinic",
+              "logo": "https://aasaan-ent-modern.vercel.app/doctor.png",
               "description": "Leading ENT Specialist in Bhopal with 24+ years experience. Expert in Cochlear Implant, Endoscopy, and comprehensive ENT treatments.",
               "url": "https://aasaan-ent-modern.vercel.app",
               "telephone": "+917240868002",
