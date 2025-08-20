@@ -39,16 +39,16 @@ export default function Hero({ onBookingClick }: HeroProps) {
               <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-3">
                 Dr. Anil Kumar Jain
               </h1>
-              <p className="text-lg lg:text-xl text-gray-600 mb-6">M.S., M.B.B.S. (Ahmedabad)</p>
+              <p className="text-lg lg:text-xl text-gray-800 mb-6">M.S., M.B.B.S. (Ahmedabad)</p>
               
               <div className="inline-block bg-red-50 px-6 py-4 rounded-lg mb-6">
                 {/* <h2 className="text-lg lg:text-xl font-bold text-red-600">
                   ENT Specialist & Cochlear Implant Surgeon
                 </h2> */}
-                <h2 className="text-lg lg:text-xl font-bold text-red-800">
+                <h2 className="text-lg lg:text-xl font-bold text-red-900">
                   ENT Specialist & Cochlear Implant Surgeon
                 </h2>
-                <p className="text-sm text-gray-700 hindi mt-1">
+                <p className="text-sm text-gray-800 hindi mt-1">
                   कान, नाक, गला विशेषज्ञ एवं कॉक्लियर इम्प्लांट सर्जन
                 </p>
               </div>
@@ -132,7 +132,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
             {/* <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Specializations</h2>
             <p className="text-xl text-gray-700 hindi">हमारी विशेषताएं</p> */}
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Specializations</h2>
-<p className="text-xl text-gray-800 hindi">हमारी विशेषताएं</p>
+<p className="text-xl text-gray-900 hindi">हमारी विशेषताएं</p>
           </div>
 
           <div className="flex justify-center">

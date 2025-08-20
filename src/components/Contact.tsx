@@ -201,7 +201,7 @@ export default function Contact() {
                   <info.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h4>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h3>
                   {info.link ? (
                     <a
                       href={info.link}
@@ -239,7 +239,7 @@ export default function Contact() {
               
               <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-md">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.5234567890123!2d75.8577258!3d22.7195687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c67b3e8bdeb39%3A0x2d3751fb39c39c0!2sDr.%20Anil%20Kumar%20Jain%20The%20Best%20ENT%20Specialist%20Bhopal!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.5234567890123!2d75.8577258!3d22.7195687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3963c3b8e8bdeb39%3A0x2d3751fb39c39c0!2sKrishna%20Plaza%2C%20G-56%2C%20near%20Narmada%20Sweet%20House%2C%20Bairagarh%2C%20Bhopal%2C%20Madhya%20Pradesh%20462030!5e0!3m2!1sen!2sin!4v1703123456789!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

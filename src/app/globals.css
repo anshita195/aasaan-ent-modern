@@ -7,8 +7,8 @@
 
 :root {
   /* Accessible Medical Design System */
-  --brand-primary: #c62828; /* Deep red - primary CTA */
-  --brand-accent: #7a2b2b; /* Accent/darker red */
+  --brand-primary: #c62828; /* Original red color */
+  --brand-accent: #7a2b2b; /* Original accent color */
   --bg-cream: #f6efea; /* Page background */
   --card-bg: #ffffff; /* Card background */
   --text-primary: #111827; /* Near black */
@@ -209,6 +209,11 @@ body::before {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
+}
+
+.microtrust-item span {
+  color: #1f2937; /* Dark gray for better contrast */
+  font-weight: 500;
 }
 
 /* Sticky Header */

@@ -2,10 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { Play, Youtube, ExternalLink } from 'lucide-react'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 
 export default function YouTubeSection() {
   const [loadedVideos, setLoadedVideos] = useState<Set<string>>(new Set())
+  const [isClient, setIsClient] = useState(false)
+  
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
   
   const loadVideo = useCallback((videoId: string) => {
     setLoadedVideos(prev => new Set(prev).add(videoId))
@@ -88,7 +93,7 @@ export default function YouTubeSection() {
             </div>
             
             <div className="aspect-video max-w-2xl mx-auto">
-              {loadedVideos.has('playlist') ? (
+              {isClient && loadedVideos.has('playlist') ? (
                 <iframe
                   src={featuredPlaylist.embedUrl}
                   title={featuredPlaylist.title}
@@ -97,15 +102,22 @@ export default function YouTubeSection() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   loading="lazy"
-                ></iframe>
+                />
               ) : (
                 <div 
-                  className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors"
+                  className="w-full h-full bg-gradient-to-br from-red-50 to-orange-50 rounded-lg flex items-center justify-center cursor-pointer hover:from-red-100 hover:to-orange-100 transition-all duration-300 border-2 border-red-200 hover:border-red-300"
                   onClick={() => loadVideo('playlist')}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && loadVideo('playlist')}
+                  aria-label="Load YouTube playlist"
                 >
                   <div className="text-center">
-                    <Play className="w-16 h-16 mx-auto mb-4 text-red-600" />
-                    <p className="text-gray-700 font-medium">Click to load playlist</p>
+                    <div className="bg-red-600 rounded-full p-4 mx-auto mb-4 shadow-lg">
+                      <Play className="w-12 h-12 text-white" fill="white" />
+                    </div>
+                    <p className="text-gray-700 font-semibold text-lg mb-2">Health Education Playlist</p>
+                    <p className="text-gray-600 text-sm">Click to load videos</p>
                   </div>
                 </div>
               )}
@@ -150,12 +162,12 @@ export default function YouTubeSection() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="aspect-video relative group cursor-pointer">
-                  {loadedVideos.has(video.videoId) ? (
+                <div className="aspect-video relative group">
+                  {isClient && loadedVideos.has(video.videoId) ? (
                     <iframe
                       src={video.embedUrl}
                       title={video.title}
-                      className="w-full h-full"
+                      className="w-full h-full rounded-t-lg"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
@@ -163,10 +175,19 @@ export default function YouTubeSection() {
                     ></iframe>
                   ) : (
                     <div 
-                      className="w-full h-full bg-gray-200 flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors"
+                      className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg flex items-center justify-center cursor-pointer hover:from-gray-200 hover:to-gray-300 transition-all duration-300 border border-gray-300"
                       onClick={() => loadVideo(video.videoId)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => e.key === 'Enter' && loadVideo(video.videoId)}
+                      aria-label={`Load video: ${video.title}`}
                     >
-                      <Play className="w-12 h-12 text-red-600" />
+                      <div className="text-center">
+                        <div className="bg-red-600 rounded-full p-3 mx-auto mb-3 shadow-lg">
+                          <Play className="w-8 h-8 text-white" fill="white" />
+                        </div>
+                        <p className="text-gray-700 font-medium text-sm px-4">Click to load video</p>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -217,9 +238,9 @@ export default function YouTubeSection() {
                 </div>
               </div>
               
-              <h4 className="text-3xl font-bold mb-3 text-gray-900">
+              <h3 className="text-3xl font-bold mb-3 text-gray-900">
                 Join Our Health Community
-              </h4>
+              </h3>
               <p className="text-gray-600 mb-2 text-lg">
                 Subscribe for expert ENT health tips & educational content
               </p>
