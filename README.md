@@ -172,8 +172,6 @@ Code quality rules are defined in `.eslintrc.json`.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Contact
-
 
 <div align="center">
   <strong>Built with ❤️ for better healthcare accessibility</strong>
