@@ -23,7 +23,7 @@ export default function Locations() {
       id: 'sant-hirdaram',
       name: 'Sant Hirdaram Nagar Clinic',
       regNumber: 'MP-6753',
-      address: 'G-56 Krishna Plaza, Near Prarthna Medical Center, Near Narmada Sweet House, Sant Hirdaram Nagar, Bairagarh, Bhopal - 462030',
+      address: 'G-56 Krishna Plaza, Near Nerbada Sweet House, Sant Hirdaram Nagar, Bairagarh, Bhopal - 462030',
       timing: '5:10 PM - 9:00 PM',
       phone: '7240868002',
       specialNote: 'Sunday - Only on Appointment',
