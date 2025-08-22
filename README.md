@@ -174,13 +174,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Dr. Anshita Gupta**  
-ENT Specialist  
-📱 +91-7240868002  
-📧 contact@aasaanentclinic.com  
-🌐 [aasaanentclinic.vercel.app](https://aasaanentclinic.vercel.app)
-
----
 
 <div align="center">
   <strong>Built with ❤️ for better healthcare accessibility</strong>
