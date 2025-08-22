@@ -42,7 +42,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
         source: 'header'
       })
     }
-    window.location.href = 'tel:+917240868002'
+    window.location.href = 'tel: 7240868002'
   }
 
   return (
@@ -60,7 +60,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
                   </a>
                   <div className="flex items-center">
                     <Clock className="h-5 w-5 mr-2" />
-                    <span className="font-medium">Mon-Sat: 5:10 PM - 9:00 PM</span>
+                    <span className="font-medium">5:10 PM - 9:00 PM</span>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -94,11 +94,11 @@ export default function Header({ onBookingClick }: HeaderProps) {
                 <h1 className={`font-bold text-gray-800 ${isScrolled ? 'text-xl' : 'text-2xl'}`}>
                   AASAAN ENT CLINIC
                 </h1>
-                {!isScrolled && (
+                {/* {!isScrolled && (
                   <p className="text-base hindi" style={{ color: 'var(--brand-primary)' }}>
                     आसान ईएनटी क्लिनिक
                   </p>
-                )}
+                )} */}
               </div>
             </motion.div>
 
@@ -120,7 +120,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
             </nav>
 
             {/* CTA Button & Phone */}
-            <div className="flex items-center gap-3">
+            {/* <div className="flex items-center gap-3">
               {isScrolled && (
                 <a 
                   href="tel:7240868002"
@@ -137,7 +137,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
               >
                 Call +91 7240868002
               </a>
-            </div>
+            </div> */}
 
             {/* Mobile Menu Button */}
             <button

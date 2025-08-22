@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, Clock, MapPin, Calendar, Users, Award, Star, Youtube } from 'lucide-react'
+import { Phone, Clock, MapPin, Calendar, Users, Award, Star, Youtube, Info } from 'lucide-react'
 import Image from 'next/image'
 
 interface HeroProps {
@@ -58,20 +58,11 @@ export default function Hero({ onBookingClick }: HeroProps) {
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8"
             >
               <a 
-                href="tel:+917240868002"
+                href="#about"
                 className="medical-button flex items-center justify-center px-8 py-3"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                Call +91 7240868002
-              </a>
-              <a 
-                href="https://m.youtube.com/channel/UClLl5WoiHRyyPTfUPtx2i0A"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="medical-button-secondary flex items-center justify-center px-8 py-3"
-              >
-                <Youtube className="mr-2 h-5 w-5" />
-                Watch Videos
+                <Info className="mr-2 h-5 w-5" />
+                Know Your Doctor
               </a>
             </motion.div>
 
