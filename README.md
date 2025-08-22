@@ -90,14 +90,6 @@ npm run audit:deps
 npm run validate
 ```
 
-## 📊 Code Coverage
-
-Current coverage thresholds:
-- **Branches**: 70%
-- **Functions**: 70% 
-- **Lines**: 70%
-- **Statements**: 70%
-
 ## 🏗️ Project Structure
 
 ```
