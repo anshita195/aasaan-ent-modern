@@ -217,7 +217,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
             </div>
             <div className="flex items-center">
               <Clock className="h-5 w-5 mr-3 text-red-600" />
-              <span className="font-medium">Mon-Sat: 5:10 PM - 9:00 PM</span>
+              <span className="font-medium">5:10 PM - 9:00 PM</span>
             </div>
             <div className="flex items-center">
               <MapPin className="h-5 w-5 mr-3 text-red-600" />

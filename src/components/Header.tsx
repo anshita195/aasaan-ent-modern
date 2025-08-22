@@ -90,16 +90,16 @@ export default function Header({ onBookingClick }: HeaderProps) {
                   className={`${isScrolled ? 'h-12 w-12' : 'h-16 w-16'} object-contain transition-all duration-300`}
                 />
               </div>
-              <div>
+              {/* <div>
                 <h1 className={`font-bold text-gray-800 ${isScrolled ? 'text-xl' : 'text-2xl'}`}>
                   AASAAN ENT CLINIC
                 </h1>
-                {/* {!isScrolled && (
+                {!isScrolled && (
                   <p className="text-base hindi" style={{ color: 'var(--brand-primary)' }}>
                     आसान ईएनटी क्लिनिक
                   </p>
-                )} */}
-              </div>
+                )}
+              </div> */}
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -120,7 +120,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
             </nav>
 
             {/* CTA Button & Phone */}
-            {/* <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3">
               {isScrolled && (
                 <a 
                   href="tel:7240868002"
@@ -137,7 +137,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
               >
                 Call +91 7240868002
               </a>
-            </div> */}
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -184,7 +184,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
       </header>
 
       {/* Mobile Sticky CTA */}
-      <div className="mobile-sticky-cta md:hidden">
+      {/* <div className="mobile-sticky-cta md:hidden">
         <a
           href="tel:+917240868002"
           onClick={handleCallClick}
@@ -193,7 +193,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
           <Phone className="w-5 h-5" />
           Call +91 7240868002
         </a>
-      </div>
+      </div> */}
     </>
   )
 }
