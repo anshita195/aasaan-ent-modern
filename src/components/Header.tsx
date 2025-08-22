@@ -90,16 +90,6 @@ export default function Header({ onBookingClick }: HeaderProps) {
                   className={`${isScrolled ? 'h-12 w-12' : 'h-16 w-16'} object-contain transition-all duration-300`}
                 />
               </div>
-              {/* <div>
-                <h1 className={`font-bold text-gray-800 ${isScrolled ? 'text-xl' : 'text-2xl'}`}>
-                  AASAAN ENT CLINIC
-                </h1>
-                {!isScrolled && (
-                  <p className="text-base hindi" style={{ color: 'var(--brand-primary)' }}>
-                    आसान ईएनटी क्लिनिक
-                  </p>
-                )}
-              </div> */}
             </motion.div>
 
             {/* Desktop Navigation */}
