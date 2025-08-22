@@ -1,11 +1,4 @@
-# 🏥 AASAAN ENT Clinic - Professional Medical Website
-
-[![CI](https://github.com/yourusername/aasaan-ent-clinic/workflows/CI/badge.svg)](https://github.com/yourusername/aasaan-ent-clinic/actions)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Jest](https://img.shields.io/badge/Jest-C21325?style=flat&logo=jest&logoColor=white)](https://jestjs.io/)
-[![Lighthouse](https://img.shields.io/badge/Lighthouse-94%2F100-green?style=flat&logo=lighthouse&logoColor=white)](https://developers.google.com/web/tools/lighthouse)
+# AASAAN ENT Clinic - Professional Medical Website
 
 A modern, high-performance medical clinic website built with Next.js, TypeScript, and Tailwind CSS. Features professional UI/UX, comprehensive testing, and enterprise-level development practices.
 
@@ -97,14 +90,6 @@ npm run audit:deps
 npm run validate
 ```
 
-## 📊 Code Coverage
-
-Current coverage thresholds:
-- **Branches**: 70%
-- **Functions**: 70% 
-- **Lines**: 70%
-- **Statements**: 70%
-
 ## 🏗️ Project Structure
 
 ```
@@ -179,15 +164,6 @@ Code quality rules are defined in `.eslintrc.json`.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Contact
-
-**Dr. Anshita Gupta**  
-ENT Specialist  
-📱 +91-7240868002  
-📧 contact@aasaanentclinic.com  
-🌐 [aasaanentclinic.vercel.app](https://aasaanentclinic.vercel.app)
-
----
 
 <div align="center">
   <strong>Built with ❤️ for better healthcare accessibility</strong>
