@@ -48,29 +48,27 @@ export default function Header({ onBookingClick }: HeaderProps) {
   return (
     <>
       <header className={`${isScrolled ? 'header-sticky' : 'bg-white shadow-lg sticky top-0'} z-50 transition-all duration-300`}>
-        {/* Top Bar - Hide on scroll */}
-        {!isScrolled && (
-          <div style={{ background: 'var(--brand-primary)' }} className="text-white py-2">
-            <div className="container mx-auto px-4">
-              <div className="flex flex-col sm:flex-row justify-between items-center text-base">
-                <div className="flex items-center space-x-6 mb-2 sm:mb-0">
-                  <a href="tel:7240868002" className="flex items-center hover:underline">
-                    <Phone className="h-5 w-5 mr-2" />
-                    <span className="font-medium">7240868002</span>
-                  </a>
-                  <div className="flex items-center">
-                    <Clock className="h-5 w-5 mr-2" />
-                    <span className="font-medium">5:10 PM - 9:00 PM</span>
-                  </div>
-                </div>
+        {/* Top Contact Bar - Hidden on mobile */}
+        <div className="hidden lg:block text-white py-2" style={{ background: 'var(--brand-primary)' }}>
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col sm:flex-row justify-between items-center text-base">
+              <div className="flex items-center space-x-6 mb-2 sm:mb-0">
+                <a href="tel:7240868002" className="flex items-center hover:underline">
+                  <Phone className="h-5 w-5 mr-2" />
+                  <span className="font-medium">7240868002</span>
+                </a>
                 <div className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-2" />
-                  <span className="font-medium">Bhopal, Madhya Pradesh</span>
+                  <Clock className="h-5 w-5 mr-2" />
+                  <span className="font-medium">Mon-Sat: 5:10 PM - 9:00 PM</span>
                 </div>
+              </div>
+              <div className="flex items-center">
+                <MapPin className="h-5 w-5 mr-2" />
+                <span className="font-medium">Bhopal, Madhya Pradesh</span>
               </div>
             </div>
           </div>
-        )}
+        </div>
 
         {/* Main Navigation */}
         <div className="container mx-auto px-4">
@@ -160,13 +158,6 @@ export default function Header({ onBookingClick }: HeaderProps) {
                     <span className="block text-sm text-gray-500 hindi">{item.hindi}</span>
                   </a>
                 ))}
-                <a 
-                  href="tel:+917240868002"
-                  onClick={handleCallClick}
-                  className="medical-button mt-4"
-                >
-                  Call +91 7240868002
-                </a>
               </nav>
             </div>
           </motion.div>
