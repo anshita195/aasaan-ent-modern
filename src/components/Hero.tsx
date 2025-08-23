@@ -118,87 +118,69 @@ export default function Hero({ onBookingClick }: HeroProps) {
           </div>
 
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl">
-            {/* Ear */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="anatomical-diagram text-center"
-            >
-              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
-                <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
-                  <Image
-                    src="/new_ear.png"
-                    alt="Ear Anatomy"
-                    width={80}
-                    height={80}
-                    loading="lazy"
-                    className="w-20 h-20 object-contain"
-                  />
+                        <div className="grid grid-cols-3 gap-x-4 gap-y-8 md:gap-x-8 max-w-4xl items-start">
+              {/* Ear */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="anatomical-diagram text-center"
+              >
+                <div className="transition-all duration-300">
+                  <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
+                    <Image
+                      src="/new_ear.png"
+                      alt="Ear Anatomy"
+                      width={80}
+                      height={80}
+                      loading="lazy"
+                      className="w-20 h-20 object-contain"
+                    />
+                  </div>
+                  <p className="font-semibold text-red-600 text-xl">Ear</p>
+                  <p className="text-base text-gray-600 hindi mt-2">कान</p>
                 </div>
-                <p className="font-semibold text-red-600 text-xl">Ear</p>
-                <p className="text-base text-gray-600 hindi mt-2">कान</p>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Left Ear */}
-            {/* <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="anatomical-diagram text-center"
-            >
-              <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/left_ear.png"
-                  alt="Left Ear Anatomy"
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 mx-auto mb-3"
-                />
-                <p className="font-semibold text-red-600">Left Ear</p>
-                <p className="text-xs text-gray-500 hindi">बायां कान</p>
-              </div>
-            </motion.div> */}
-
-            {/* Nose */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="anatomical-diagram text-center"
-            >
-              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
-                <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
-                  <Image
-                    src="/new_nose.png"
-                    alt="Nose Anatomy"
-                    width={80}
-                    height={80}
-                    loading="lazy"
-                    className="w-20 h-20 object-contain"
-                  />
+              {/* Nose */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="anatomical-diagram text-center"
+              >
+                <div className="transition-all duration-300">
+                  <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
+                    <Image
+                      src="/new_nose.png"
+                      alt="Nose Anatomy"
+                      width={80}
+                      height={80}
+                      loading="lazy"
+                      className="w-20 h-20 object-contain"
+                    />
+                  </div>
+                  <p className="font-semibold text-red-600 text-xl">Nose</p>
+                  <p className="text-base text-gray-600 hindi mt-2">नाक</p>
                 </div>
-                <p className="font-semibold text-red-600 text-xl">Nose</p>
-                <p className="text-base text-gray-600 hindi mt-2">नाक</p>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Throat */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="anatomical-diagram text-center"
-            >
-              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
-                <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
-                  <Image
-                    src="/new_throat.png"
-                    alt="Throat Anatomy"
-                    width={80}
-                    height={80}
-                    loading="lazy"
-                    className="w-20 h-20 object-contain"
-                  />
+              {/* Throat */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="anatomical-diagram text-center"
+              >
+                <div className="transition-all duration-300">
+                  <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
+                    <Image
+                      src="/new_throat.png"
+                      alt="Throat Anatomy"
+                      width={80}
+                      height={80}
+                      loading="lazy"
+                      className="w-20 h-20 object-contain"
+                    />
+                  </div>
+                  <p className="font-semibold text-red-600 text-xl">Throat</p>
+                  <p className="text-base text-gray-600 hindi mt-2">गला</p>
                 </div>
-                <p className="font-semibold text-red-600 text-xl">Throat</p>
-                <p className="text-base text-gray-600 hindi mt-2">गला</p>
-              </div>
-            </motion.div>
+              </motion.div>
             </div>
           </div>
         </motion.div>

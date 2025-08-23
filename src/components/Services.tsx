@@ -106,12 +106,13 @@ export default function Services({ onBookingClick }: ServicesProps) {
         </motion.div>
 
         {/* Services Grid */}
+        {/* Desktop View: Grid of Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          className="hidden md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
           {services.map((service, index) => (
             <motion.div
@@ -165,6 +166,31 @@ export default function Services({ onBookingClick }: ServicesProps) {
 
                 {/* Hover effect overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-medical-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Mobile View: Simple List */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="md:hidden space-y-4 max-w-md mx-auto"
+        >
+          {services.map((service) => (
+            <motion.div
+              key={service.title}
+              variants={itemVariants}
+              className="bg-medical-cream/50 border border-medical-red/10 rounded-lg p-4 flex items-center gap-4"
+            >
+              <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-medical-red to-medical-darkred rounded-lg flex items-center justify-center">
+                <service.icon className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800">{service.title}</h3>
+                <p className="text-sm text-gray-500 hindi">{service.titleHindi}</p>
               </div>
             </motion.div>
           ))}

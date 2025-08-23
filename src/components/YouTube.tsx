@@ -54,10 +54,10 @@ export default function YouTubeSection() {
             <Youtube className="w-8 h-8 text-red-600" />
             Health Education Videos
           </h2>
-          <p className="text-lg text-gray-600 hindi mb-2">
+          <p className="text-lg text-gray-600 hindi mb-2 hidden md:block">
             स्वास्थ्य शिक्षा वीडियो
           </p>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto hidden md:block">
             Watch Dr. Anil Kumar Jain&apos;s educational videos for better health awareness and preventive care
           </p>
         </motion.div>
@@ -74,13 +74,13 @@ export default function YouTubeSection() {
             <div className="p-6 bg-gradient-to-r from-red-600 to-orange-600 text-white">
               <h3 className="text-2xl font-bold mb-2 flex items-center gap-3">
                 <Play className="w-6 h-6" />
-                {featuredPlaylist.title}
+                Aapka Swasth <span className="hidden sm:inline">- Your Health</span>
               </h3>
-              <p className="text-red-100 mb-1">{featuredPlaylist.description}</p>
+              <p className="text-red-100 mb-1 hidden sm:block">{featuredPlaylist.description}</p>
               <p className="text-sm text-red-200 hindi">{featuredPlaylist.hindi}</p>
             </div>
             
-            <div className="aspect-video max-w-2xl mx-auto">
+                        <div className="aspect-video max-w-2xl mx-auto px-4 md:px-2">
               <iframe
                 src={featuredPlaylist.embedUrl}
                 title={featuredPlaylist.title}
@@ -120,7 +120,7 @@ export default function YouTubeSection() {
             </span>
           </h3>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {featuredVideos.map((video, index) => (
               <motion.div
                 key={video.videoId}
@@ -128,7 +128,7 @@ export default function YouTubeSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 ${video.videoId === '_CxmT0ooRnE' ? 'hidden md:block' : ''}`}
               >
                 <div className="aspect-video relative group cursor-pointer">
                   <iframe
@@ -145,8 +145,8 @@ export default function YouTubeSection() {
                   <h4 className="font-semibold text-gray-900 mb-2 line-clamp-2">
                     {video.title}
                   </h4>
-                  <p className="text-sm text-gray-600 mb-2">{video.description}</p>
-                  <p className="text-xs text-gray-500 hindi mb-3">{video.hindi}</p>
+                  <p className="text-sm text-gray-600 mb-2 hidden md:block">{video.description}</p>
+                  <p className="text-xs text-gray-500 hindi hidden md:block">{video.hindi}</p>
                   
                   <a
                     href={video.videoUrl}

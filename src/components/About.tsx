@@ -1,9 +1,11 @@
 'use client'
+import { useState } from 'react'
 
 import { motion } from 'framer-motion'
 import { GraduationCap, Briefcase, Award, Eye, Heart } from 'lucide-react'
 
 export default function About() {
+  const [isExpanded, setIsExpanded] = useState(false)
   const education = [
     { degree: 'M.S. (Master of Surgery) - ENT', institution: 'B J Medical College, Ahmedabad', year: '2004' },
     { degree: 'DLO', institution: 'B J Medical College, Ahmedabad', year: '2003' },
@@ -57,7 +59,7 @@ export default function About() {
               डॉ. अनिल कुमार जैन के बारे में
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
             Your Trusted ENT Specialist with Decades of Excellence
           </p>
           <div className="w-24 h-1 bg-medical-red mx-auto mt-6"></div>
@@ -78,13 +80,15 @@ export default function About() {
                 <Award className="w-6 h-6" />
                 Know Your Doctor
               </h3>
-              <p className="text-gray-700 leading-relaxed text-lg">
-                {/* Dr. Anil Kumar Jain is a highly experienced ENT Specialist and Cochlear Implant Surgeon 
-                with over 24 years of dedicated service in healthcare. He is committed to providing 
-                state-of-the-art healthcare services with special interest in training medical students 
-                and healthcare professionals. */}
-                I am a Senior ENT and Cochlear Implant Surgeon, ENT Specialist, Microscopic and Endoscopic Surgeon, FESS expert providing state of art health care services to the society at large. I have special interest in training the MBBS, MS, Dental, Physiotherapy and Nursing Students so that they can master the art to take care of the patients with Skill, Precision and HONESTY. I am always eager and available to spread awareness about Healthy Life style and importance of Health Hygiene. I strongly believe that Prevention is Better than Cure. In my YouTube Channel (AasaanLife4U) I have posted videos, in simple language to spread awareness about how to take care of your health. In play list AAPKA SWASTH many such videos can be seen. I am very close to Nature and taking care of plants, birds and much more. This keeps me Humble, Relaxed and Energetic to serve one and all.
+              <p className={`text-gray-600 text-left leading-relaxed ${!isExpanded ? 'line-clamp-3 md:line-clamp-none' : ''}`}>
+                I am a Senior ENT and Cochlear Implant Surgeon, ENT Specialist, Microscopic and Endoscopic Surgeon, FESS expert providing state of art treatment for all ENT problems, with a special interest in endoscopic sinus and ear surgeries. I have over 20 years of experience in providing compassionate care. Dental, Physiotherapy and Nursing Students so that they can master the art to take care of the patients with Skill, Precision and HONESTY. I am always eager and available to spread awareness about Healthy Life style and importance of Health Hygiene. I strongly believe that Prevention is Better than Cure. In my YouTube Channel (AasaanLife4U) I have posted videos, in simple language to spread awareness about how to take care of your health. In play list AAPKA SWASTH many such videos can be seen. I am very close to Nature and taking care of plants, birds and much more. This keeps me Humble, Relaxed and Energetic to serve one and all.
               </p>
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-red-600 hover:text-red-800 font-semibold text-sm md:hidden mt-2 self-start"
+              >
+                {isExpanded ? 'Read Less' : 'Read More'}
+              </button>
             </div>
 
             {/* Education */}

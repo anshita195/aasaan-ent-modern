@@ -3,7 +3,10 @@
 import { motion } from 'framer-motion'
 import { Star, ExternalLink } from 'lucide-react'
 
+import { useState } from 'react'
+
 export default function Testimonials() {
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({})
   const googleReviews = [
     {
       name: 'Nimish Soni',
@@ -142,9 +145,18 @@ export default function Testimonials() {
               </div>
 
               {/* Review Text */}
-              <p className="text-gray-700 mb-4 leading-relaxed text-sm">
-                {review.text}
-              </p>
+              <p className={`text-gray-700 mb-4 leading-relaxed text-sm ${!expanded[index] ? 'line-clamp-3 md:line-clamp-none' : ''}`}>
+                  {review.text}
+                </p>
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent card click
+                    setExpanded(prev => ({...prev, [index]: !prev[index]}));
+                  }}
+                  className="text-red-600 hover:text-red-800 font-semibold text-sm md:hidden mt-2"
+                >
+                  {expanded[index] ? 'Read Less' : 'Read More'}
+                </button>
 
               {/* Click to view on Google */}
               <div className="flex items-center justify-between pt-3 border-t border-gray-100">
