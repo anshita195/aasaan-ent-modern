@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import { MapPin, Clock, Phone, Calendar, IndianRupee, Copy } from 'lucide-react'
 import { useState } from 'react'
+import ReadMore from './ReadMore'
+import CollapsibleSection from './CollapsibleSection'
 
 export default function Locations() {
   const [copiedAddress, setCopiedAddress] = useState<string | null>(null)
@@ -80,30 +82,31 @@ export default function Locations() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
-              className="group"
             >
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-medical-red/10 hover:shadow-2xl hover:border-medical-red/30 transition-all duration-300 h-full">
-                {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-6 pb-6 border-b-2 border-medical-beige">
-                  <div>
-                    <h3 className="text-2xl font-bold text-medical-red mb-2 flex items-center gap-2">
-                      <MapPin className="w-6 h-6" />
-                      {location.name}
-                    </h3>
-                    <span className="inline-block bg-medical-beige text-medical-red px-3 py-1 rounded-full text-sm font-semibold">
-                      Reg. No.: {location.regNumber}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Details */}
-                <div className="space-y-4">
+              <CollapsibleSection 
+                initiallyOpen={index === 0} // Open the first location by default
+                title={
+                  <>
+                    <MapPin className="w-6 h-6" />
+                    <div className='text-left'>
+                      <h3 className="text-xl font-bold text-medical-red">
+                        {location.name}
+                      </h3>
+                      <span className="text-xs font-normal text-gray-500">
+                        Reg. No.: {location.regNumber}
+                      </span>
+                    </div>
+                  </>
+                }
+              >
+                <div className="space-y-4 pt-4 border-t border-medical-beige">
                   {/* Address */}
                   <div className="flex items-start gap-3 group/address">
                     <MapPin className="w-5 h-5 text-medical-red mt-1 flex-shrink-0" />
                     <div className="flex-1">
-                      <p className="text-gray-700 leading-relaxed">{location.address}</p>
+                      <ReadMore maxLength={60}>
+                        <p className="text-gray-700 leading-relaxed">{location.address}</p>
+                      </ReadMore>
                       <button
                         onClick={() => copyAddress(location.address, location.id)}
                         className="mt-2 text-xs text-medical-red hover:text-medical-darkred flex items-center gap-1 opacity-0 group-hover/address:opacity-100 transition-opacity duration-200"
@@ -133,7 +136,7 @@ export default function Locations() {
 
                   {/* Special Notes */}
                   {location.specialNote && (
-                    <div className={`flex items-center gap-3 p-4 rounded-lg ${
+                    <div className={`flex items-center gap-3 p-3 rounded-lg ${
                       location.noteType === 'warning' 
                         ? 'bg-yellow-50 border-l-4 border-yellow-400' 
                         : 'bg-blue-50 border-l-4 border-blue-400'
@@ -141,7 +144,7 @@ export default function Locations() {
                       <Calendar className={`w-5 h-5 flex-shrink-0 ${
                         location.noteType === 'warning' ? 'text-yellow-600' : 'text-blue-600'
                       }`} />
-                      <span className={`font-medium ${
+                      <span className={`text-sm font-medium ${
                         location.noteType === 'warning' ? 'text-yellow-800' : 'text-blue-800'
                       }`}>
                         {location.specialNote}
@@ -151,9 +154,9 @@ export default function Locations() {
 
                   {/* Consultation Fee */}
                   {location.consultationFee && (
-                    <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                    <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
                       <IndianRupee className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-blue-800 font-medium">
+                      <span className="text-sm text-blue-800 font-medium">
                         Consultation Fee: {location.consultationFee}
                       </span>
                     </div>
@@ -161,7 +164,7 @@ export default function Locations() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-medical-beige">
+                <div className="flex flex-col sm:flex-row gap-3 mt-6 pt-6 border-t border-medical-beige">
                   <motion.a
                     href={`tel:${location.phone}`}
                     className="flex-1 bg-medical-red text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-medical-darkred transition-colors duration-200 flex items-center justify-center gap-2"
@@ -184,7 +187,7 @@ export default function Locations() {
                     Get Directions
                   </motion.button>
                 </div>
-              </div>
+              </CollapsibleSection>
             </motion.div>
           ))}
         </div>

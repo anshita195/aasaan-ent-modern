@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Play, Youtube, ExternalLink } from 'lucide-react'
+import { Play, Youtube, ExternalLink, Video } from 'lucide-react'
+import CollapsibleSection from './CollapsibleSection'
 
 export default function YouTubeSection() {
   const featuredPlaylist = {
@@ -50,14 +51,14 @@ export default function YouTubeSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
             <Youtube className="w-8 h-8 text-red-600" />
             Health Education Videos
           </h2>
-          <p className="text-lg text-gray-600 hindi mb-2 hidden md:block">
+          <p className="text-md md:text-lg text-gray-600 hindi mb-2">
             स्वास्थ्य शिक्षा वीडियो
           </p>
-          <p className="text-gray-600 max-w-2xl mx-auto hidden md:block">
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
             Watch Dr. Anil Kumar Jain&apos;s educational videos for better health awareness and preventive care
           </p>
         </motion.div>
@@ -71,16 +72,16 @@ export default function YouTubeSection() {
           className="mb-12"
         >
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-red-100">
-            <div className="p-6 bg-gradient-to-r from-red-600 to-orange-600 text-white">
-              <h3 className="text-2xl font-bold mb-2 flex items-center gap-3">
+            <div className="p-4 md:p-6 bg-gradient-to-r from-red-600 to-orange-600 text-white">
+              <h3 className="text-xl md:text-2xl font-bold mb-2 flex items-center gap-3">
                 <Play className="w-6 h-6" />
                 Aapka Swasth <span className="hidden sm:inline">- Your Health</span>
               </h3>
-              <p className="text-red-100 mb-1 hidden sm:block">{featuredPlaylist.description}</p>
+              <p className="text-red-100 mb-1 text-sm sm:text-base">{featuredPlaylist.description}</p>
               <p className="text-sm text-red-200 hindi">{featuredPlaylist.hindi}</p>
             </div>
             
-                        <div className="aspect-video max-w-2xl mx-auto px-4 md:px-2">
+                        <div className="aspect-video max-w-2xl mx-auto px-0 md:px-2">
               <iframe
                 src={featuredPlaylist.embedUrl}
                 title={featuredPlaylist.title}
@@ -112,56 +113,57 @@ export default function YouTubeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
+          className="max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Featured Health Tips
-            <span className="block text-lg font-normal text-gray-600 hindi mt-1">
-              विशेष स्वास्थ्य सुझाव
-            </span>
-          </h3>
-          
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {featuredVideos.map((video, index) => (
-              <motion.div
-                key={video.videoId}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 ${video.videoId === '_CxmT0ooRnE' ? 'hidden md:block' : ''}`}
-              >
-                <div className="aspect-video relative group cursor-pointer">
-                  <iframe
-                    src={video.embedUrl}
-                    title={video.title}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+          <CollapsibleSection
+            title={
+              <div className="flex items-center gap-3">
+                <Video className="w-6 h-6 text-red-600" />
+                <div>
+                  <span className="text-xl font-bold text-gray-900">Watch Healthcare Videos</span>
+                  <span className="block text-sm font-normal text-gray-600 hindi">विशेष स्वास्थ्य सुझाव</span>
                 </div>
-                
-                <div className="p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2 line-clamp-2">
-                    {video.title}
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-2 hidden md:block">{video.description}</p>
-                  <p className="text-xs text-gray-500 hindi hidden md:block">{video.hindi}</p>
-                  
-                  <a
-                    href={video.videoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 font-medium text-sm"
-                  >
-                    <Play className="w-4 h-4" />
-                    Watch on YouTube
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            }
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 pt-4">
+              {featuredVideos.map((video, index) => (
+                <motion.div
+                  key={video.videoId}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="aspect-video relative group cursor-pointer">
+                    <iframe
+                      src={video.embedUrl}
+                      title={video.title}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <div className="p-3">
+                    <h4 className="font-semibold text-gray-900 mb-1 line-clamp-2 text-sm">
+                      {video.title}
+                    </h4>
+                    <a
+                      href={video.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-red-600 hover:text-red-700 font-medium text-xs"
+                    >
+                      <Play className="w-3 h-3" />
+                      Watch on YouTube
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </CollapsibleSection>
         </motion.div>
 
         {/* Enhanced Channel Subscription Section */}
@@ -187,10 +189,10 @@ export default function YouTubeSection() {
                 </div>
               </div>
               
-              <h4 className="text-3xl font-bold mb-3 text-gray-900">
+              <h4 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
                 Join Our Health Community
               </h4>
-              <p className="text-gray-600 mb-2 text-lg">
+              <p className="text-gray-600 mb-2 text-base md:text-lg">
                 Subscribe for expert ENT health tips & educational content
               </p>
               <p className="text-gray-500 mb-6 hindi text-base">
