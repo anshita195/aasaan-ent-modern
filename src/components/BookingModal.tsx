@@ -5,23 +5,28 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, Phone } from 'lucide-react'
 
 interface BookingModalProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
+  onCallClick?: () => void; // Optional prop for custom call handling
 }
 
 // Simplified component - just shows call-to-action
-export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
+const defaultHandleCallClick = () => {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'call_button_click', {
+      source: 'booking_modal',
+    });
+  }
+  window.location.assign('tel:+917240868002');
+};
+
+export default function BookingModal({
+  isOpen,
+  onClose,
+  onCallClick = defaultHandleCallClick, // Use default if not provided
+}: BookingModalProps) {
   if (!isOpen) return null
 
-  const handleCallClick = () => {
-    // Track call click event
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'call_button_click', {
-        source: 'booking_modal'
-      })
-    }
-    window.location.href = 'tel:+917240868002'
-  }
 
   return (
     <AnimatePresence>
@@ -29,6 +34,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        data-testid="booking-modal-overlay"
         className="fixed inset-0 z-50 flex items-center justify-center p-4"
         style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
         onClick={onClose}
@@ -69,7 +75,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             
             <div className="space-y-4">
               <button
-                onClick={handleCallClick}
+                onClick={onCallClick}
                 className="medical-button w-full text-lg py-4"
               >
                 <Phone className="w-6 h-6" />
