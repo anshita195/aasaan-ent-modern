@@ -11,12 +11,12 @@ describe('Services Component', () => {
     expect(screen.getByText(/हमारी सेवाएं/i)).toBeInTheDocument()
 
     // Check for actual services from the component
-    expect(screen.getByText(/General ENT Examination/i)).toBeInTheDocument()
-    expect(screen.getByText(/Stammering, Speech Therapy, AVT/i)).toBeInTheDocument()
-    expect(screen.getByText(/Vertigo/i)).toBeInTheDocument()
-    expect(screen.getByText(/Polyp Removal/i)).toBeInTheDocument()
-    expect(screen.getByText(/Endoscopy/i)).toBeInTheDocument()
-    expect(screen.getByText(/Cochlear Implant, Hearing Aids/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/General ENT Examination/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Stammering, Speech Therapy, AVT/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Vertigo/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Polyp Removal/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Endoscopy/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Cochlear Implant, Hearing Aids/i)[0]).toBeInTheDocument()
   })
 
   it('displays call to enquire buttons', () => {
