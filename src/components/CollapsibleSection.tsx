@@ -24,7 +24,7 @@ export default function CollapsibleSection({
 
   const toggleOpen = () => setIsOpen(!isOpen)
 
-  const baseClasses = "rounded-2xl p-6 shadow-lg border border-medical-red/10"
+  const baseClasses = "bg-white rounded-2xl p-6 shadow-lg border border-medical-red/10"
   const combinedClasses = twMerge(baseClasses, customClasses)
 
   return (

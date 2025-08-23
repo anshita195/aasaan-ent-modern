@@ -115,7 +115,7 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-3 p-3 bg-medical-cream rounded-lg"
+                    className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
                   >
                     <div className="w-6 h-6 bg-medical-red rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-sm font-bold">✓</span>
@@ -161,7 +161,7 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="flex justify-between items-center p-4 bg-medical-cream rounded-lg border-l-4 border-medical-red"
+                    className="flex justify-between items-center p-4 bg-gray-50 rounded-lg border-l-4 border-medical-red"
                   >
                     <div>
                       <span className="font-bold text-medical-red">{edu.degree}</span>
@@ -185,7 +185,7 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-3 p-3 hover:bg-medical-cream rounded-lg transition-colors duration-200"
+                    className="flex items-start gap-3 p-3 hover:bg-gray-50 rounded-lg transition-colors duration-200"
                   >
                     <div className="w-2 h-2 bg-medical-red rounded-full mt-3 flex-shrink-0"></div>
                     <span className="text-gray-700">{exp}</span>
@@ -207,7 +207,7 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-3 p-3 hover:bg-medical-cream rounded-lg transition-colors duration-200"
+                    className="flex items-start gap-3 p-3 hover:bg-gray-50 rounded-lg transition-colors duration-200"
                   >
                     <div className="w-2 h-2 bg-medical-red rounded-full mt-3 flex-shrink-0"></div>
                     <span className="text-gray-700">{membership}</span>

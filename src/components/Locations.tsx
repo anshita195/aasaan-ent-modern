@@ -138,10 +138,10 @@ export default function Locations() {
 
                   {/* Special Notes */}
                   {location.specialNote && (
-                    <div className={`flex items-center gap-3 p-3 rounded-lg ${
+                    <div className={`flex items-center gap-3 p-3 rounded-lg bg-white ${ 
                       location.noteType === 'warning' 
-                        ? 'bg-yellow-50 border-l-4 border-yellow-400' 
-                        : 'bg-blue-50 border-l-4 border-blue-400'
+                        ? 'border-l-4 border-yellow-400'
+                        : 'border-l-4 border-blue-400'
                     }`}>
                       <Calendar className={`w-5 h-5 flex-shrink-0 ${
                         location.noteType === 'warning' ? 'text-yellow-600' : 'text-blue-600'
@@ -156,7 +156,7 @@ export default function Locations() {
 
                   {/* Consultation Fee */}
                   {location.consultationFee && (
-                    <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                    <div className="flex items-center gap-3 p-3 bg-white rounded-lg border-l-4 border-blue-400">
                       <IndianRupee className="w-5 h-5 text-blue-600 flex-shrink-0" />
                       <span className="text-sm text-blue-800 font-medium">
                         Consultation Fee: {location.consultationFee}
