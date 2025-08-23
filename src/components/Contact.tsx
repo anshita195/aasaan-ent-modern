@@ -251,7 +251,7 @@ export default function Contact() {
               
               <div className="mt-4 text-center">
                 <p className="text-sm md:text-base text-gray-700 font-medium">
-                  Krishna Plaza, G-56, Near Narmada Sweet House, Bairagarh, Bhopal, MP 462030
+                   G-56, Krishna Plaza, Near Nerbada Sweet House, Bairagarh, Bhopal, MP 462030
                 </p>
                 <a
                   href="https://www.google.com/maps/dir//Dr.+Anil+Kumar+Jain+The+Best+ENT+Specialist+Bhopal,+Krishna+Plaza,+G-56,+near+Narmada+Sweet+House,+Bairagarh,+Bhopal,+Madhya+Pradesh+462030/@22.7195687,75.8577258,17z"

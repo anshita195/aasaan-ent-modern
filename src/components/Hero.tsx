@@ -195,11 +195,11 @@ export default function Hero({ onBookingClick }: HeroProps) {
           <div className="flex flex-wrap justify-center gap-8 text-base text-gray-600">
             <div className="flex items-center">
               <Phone className="h-5 w-5 mr-3 text-red-600" />
-              <span className="font-semibold text-lg">7240868002</span>
+              <span className="font-semibold text-lg">+91 7240868002</span>
             </div>
             <div className="flex items-center">
               <Clock className="h-5 w-5 mr-3 text-red-600" />
-              <span className="font-medium">5:10 PM - 9:00 PM</span>
+              <span className="font-medium">Mon-Sat 5:10 PM - 9:00 PM</span>
             </div>
             <div className="flex items-center">
               <MapPin className="h-5 w-5 mr-3 text-red-600" />
