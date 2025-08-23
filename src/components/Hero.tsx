@@ -13,7 +13,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
     { icon: Users, value: '10,000+', label: 'Patients Treated', hindi: 'मरीजों का इलाज' },
     { icon: Award, value: '20+', label: 'Years Experience', hindi: 'साल का अनुभव' },
     { icon: Star, value: '4.9/5', label: 'Patient Rating', hindi: 'मरीज रेटिंग' }
-  ]
+  ];
 
   return (
     <section className="relative min-h-screen bg-white">
