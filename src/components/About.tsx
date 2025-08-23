@@ -82,52 +82,7 @@ export default function About() {
               </p>
             </CollapsibleSection>
 
-            {/* Education */}
-            <CollapsibleSection
-              title={<><GraduationCap className="w-6 h-6 text-medical-red" /><span>Education & Qualifications</span></>}
-            >
-              <div className="space-y-4">
-                {education.map((edu, index) => (
-                  <motion.div
-                    key={edu.degree}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="flex justify-between items-center p-4 bg-medical-cream rounded-lg border-l-4 border-medical-red"
-                  >
-                    <div>
-                      <span className="font-bold text-medical-red">{edu.degree}</span>
-                      <p className="text-gray-600 text-sm">{edu.institution}</p>
-                    </div>
-                    <span className="text-medical-brown font-semibold">{edu.year}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </CollapsibleSection>
-
-            {/* Experience */}
-            <CollapsibleSection
-              title={<><Briefcase className="w-6 h-6 text-medical-red" /><span>Professional Experience</span></>}
-            >
-              <div className="space-y-3">
-                {experience.map((exp, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3 p-3 hover:bg-medical-cream rounded-lg transition-colors duration-200"
-                  >
-                    <div className="w-2 h-2 bg-medical-red rounded-full mt-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">{exp}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </CollapsibleSection>
-          </motion.div>
-
+          
           {/* Right Column - Vision & Mission */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -193,6 +148,53 @@ export default function About() {
                 </p>
               </div>
             </CollapsibleSection>
+
+            {/* Education */}
+            <CollapsibleSection
+              title={<><GraduationCap className="w-6 h-6 text-medical-red" /><span>Education & Qualifications</span></>}
+            >
+              <div className="space-y-4">
+                {education.map((edu, index) => (
+                  <motion.div
+                    key={edu.degree}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="flex justify-between items-center p-4 bg-medical-cream rounded-lg border-l-4 border-medical-red"
+                  >
+                    <div>
+                      <span className="font-bold text-medical-red">{edu.degree}</span>
+                      <p className="text-gray-600 text-sm">{edu.institution}</p>
+                    </div>
+                    <span className="text-medical-brown font-semibold">{edu.year}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </CollapsibleSection>
+
+            {/* Experience */}
+            <CollapsibleSection
+              title={<><Briefcase className="w-6 h-6 text-medical-red" /><span>Professional Experience</span></>}
+            >
+              <div className="space-y-3">
+                {experience.map((exp, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-3 p-3 hover:bg-medical-cream rounded-lg transition-colors duration-200"
+                  >
+                    <div className="w-2 h-2 bg-medical-red rounded-full mt-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">{exp}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </CollapsibleSection>
+          </motion.div>
+
             {/* Memberships */}
             <CollapsibleSection
               title={<><Award className="w-6 h-6 text-medical-red" /><span>Professional Memberships</span></>}

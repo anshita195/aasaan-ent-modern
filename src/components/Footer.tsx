@@ -121,7 +121,8 @@ export default function Footer() {
           className="border-t border-gray-800 mt-8 pt-6 text-center"
         >
           <p className="text-gray-400 text-xs sm:text-sm mb-2">
-            &copy; {currentYear} AASAAN ENT Clinic - Dr. Anil Kumar Jain. All rights reserved.
+            &copy; {currentYear} AASAAN ENT Clinic - Dr. Anil Kumar Jain. <br/>
+            All rights reserved.
           </p>
           <p className="text-gray-500 text-xs">
             Professional ENT Care | 

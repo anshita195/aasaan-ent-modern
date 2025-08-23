@@ -10,6 +10,18 @@ export default function Locations() {
   const [copiedAddress, setCopiedAddress] = useState<string | null>(null)
 
   const locations = [
+
+    {
+      id: 'sant-hirdaram',
+      name: 'Sant Hirdaram Nagar Clinic',
+      regNumber: 'MP-6753',
+      address: 'G-56, Krishna Plaza, Near Nerbada Sweet House, Sant Hirdaram Nagar, Bairagarh, Bhopal - 462030',
+      timing: '5:10 PM - 9:00 PM',
+      phone: '7240868002',
+      specialNote: 'Sunday - Only on Appointment',
+      consultationFee: '₹300',
+      noteType: 'warning'
+    },
     {
       id: 'lalghati',
       name: 'Lalghati Clinic',
@@ -21,17 +33,7 @@ export default function Locations() {
       consultationFee: '₹300',
       noteType: 'warning'
     },
-    {
-      id: 'sant-hirdaram',
-      name: 'Sant Hirdaram Nagar Clinic',
-      regNumber: 'MP-6753',
-      address: 'G-56 Krishna Plaza, Near Nerbada Sweet House, Sant Hirdaram Nagar, Bairagarh, Bhopal - 462030',
-      timing: '5:10 PM - 9:00 PM',
-      phone: '7240868002',
-      specialNote: 'Sunday - Only on Appointment',
-      consultationFee: '₹300',
-      noteType: 'warning'
-    }
+    
   ]
 
   const copyAddress = async (address: string, locationId: string) => {
