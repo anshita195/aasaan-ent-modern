@@ -26,6 +26,7 @@ module.exports = {
           beige: '#ede7e0',
           brown: '#8b4513',
           red: '#d32f2f',
+          'red-soft': '#D0433B',
           darkred: '#b71c1c',
         },
         background: 'hsl(var(--background))',

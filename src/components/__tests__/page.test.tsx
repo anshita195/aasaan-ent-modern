@@ -23,8 +23,12 @@ describe('Home Page', () => {
     expect(screen.getByText(/Contact Us/i)).toBeInTheDocument()
 
     // Check for call-to-action elements
-    const callLinks = screen.getAllByRole('link', { name: /Call \+91 7240868002/i })
-    expect(callLinks.length).toBeGreaterThan(0)
+    // Check for the main header call button using its test-id
+    expect(screen.getByTestId('header-call-button')).toBeInTheDocument();
+
+    // Check for other call links using a more generic query based on their href
+    const callLinks = screen.getAllByRole('link', { name: /call/i });
+    expect(callLinks.length).toBeGreaterThan(0);
 
     // Check for doctor information (use getAllBy since name appears multiple times)
     const doctorNames = screen.getAllByText(/Dr\. Anil Kumar Jain/i)

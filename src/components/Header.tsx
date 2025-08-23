@@ -77,7 +77,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center space-x-3"
+              className="flex items-center gap-3"
             >
               <div className="flex-shrink-0">
                 <Image 
@@ -88,6 +88,15 @@ export default function Header({ onBookingClick }: HeaderProps) {
                   className={`${isScrolled ? 'h-12 w-12' : 'h-16 w-16'} object-contain transition-all duration-300`}
                 />
               </div>
+              {/* Moved Call Button next to Logo */}
+              <a
+                href="tel:+917240868002"
+                onClick={handleCallClick}
+                className="medical-button"
+                data-testid="header-call-button"
+              >
+                <Phone className="h-5 w-5 text-white-600" /> Call
+              </a>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -107,7 +116,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
               ))}
             </nav>
 
-            {/* CTA Button & Phone */}
+            {/* Right-side utilities (kept small phone on scroll, removed duplicate call button) */}
             <div className="flex items-center gap-3">
               {isScrolled && (
                 <a 
@@ -117,14 +126,6 @@ export default function Header({ onBookingClick }: HeaderProps) {
                   <Phone className="h-4 w-4" />
                 </a>
               )}
-              
-              <a
-                href="tel:+917240868002"
-                onClick={handleCallClick}
-                className="medical-button"
-              >
-                Call +91 7240868002
-              </a>
             </div>
 
             {/* Mobile Menu Button */}

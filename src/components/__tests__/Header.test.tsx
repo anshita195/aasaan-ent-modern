@@ -13,10 +13,10 @@ describe('Header Component', () => {
     const logo = screen.getByAltText(/AASAAN ENT Clinic Logo/i)
     expect(logo).toBeInTheDocument()
 
-    // Check that call-to-action links exist (using getAllBy to handle multiple)
-    const callLinks = screen.getAllByRole('link', { name: /Call \+91 7240868002/i })
-    expect(callLinks.length).toBeGreaterThan(0)
-    expect(callLinks[0]).toHaveAttribute('href', 'tel:+917240868002')
+    // Check that the main call-to-action link exists
+    const callLink = screen.getByTestId('header-call-button')
+    expect(callLink).toBeInTheDocument()
+    expect(callLink).toHaveAttribute('href', 'tel:+917240868002')
 
     // Check for navigation links
     expect(screen.getByRole('link', { name: /Home होम/i })).toBeInTheDocument()

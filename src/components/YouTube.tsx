@@ -71,17 +71,16 @@ export default function YouTubeSection() {
           transition={{ delay: 0.2 }}
           className="mb-12"
         >
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-red-100">
-            <div className="p-4 md:p-6 bg-gradient-to-r from-red-600 to-orange-600 text-white">
-              <h3 className="text-xl md:text-2xl font-bold mb-2 flex items-center gap-3">
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+            <div className="p-6 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 flex items-center gap-3 border-l-4 border-medical-red-soft pl-3">
                 <Play className="w-6 h-6" />
-                Aapka Swasth <span className="hidden sm:inline">- Your Health</span>
+                Aapka Swasth - Your Health
               </h3>
-              <p className="text-red-100 mb-1 text-sm sm:text-base">{featuredPlaylist.description}</p>
-              <p className="text-sm text-red-200 hindi">{featuredPlaylist.hindi}</p>
+              <p className="text-gray-600 text-sm sm:text-base">{featuredPlaylist.description}</p>
             </div>
             
-                        <div className="aspect-video max-w-2xl mx-auto px-0 md:px-2">
+                        <div className="aspect-video max-w-2xl mx-auto mt-4 relative group">
               <iframe
                 src={featuredPlaylist.embedUrl}
                 title={featuredPlaylist.title}
@@ -90,14 +89,17 @@ export default function YouTubeSection() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+              <a href={featuredPlaylist.playlistUrl} target="_blank" rel="noopener noreferrer" className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Play className="w-16 h-16 text-white" />
+              </a>
             </div>
             
-            <div className="p-4 bg-gray-50 flex justify-center">
+            <div className="p-6 bg-gray-50 flex justify-center">
               <a
                 href={featuredPlaylist.playlistUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-medical-red-soft text-white rounded-lg hover:bg-medical-red transition-colors duration-200 font-semibold"
               >
                 <Youtube className="w-4 h-4" />
                 View Full Playlist

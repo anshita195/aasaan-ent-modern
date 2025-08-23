@@ -30,7 +30,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column: Content */}
-          <div className="text-center md:text-left flex flex-col justify-center">
+          <div className="text-center md:text-left flex flex-col justify-center order-2 md:order-1">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -59,7 +59,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
             >
               <a 
                 href="#about"
-                className="medical-button flex items-center justify-center px-8 py-3"
+                className="medical-button-invert flex items-center justify-center px-8 py-3"
               >
                 <Info className="mr-2 h-5 w-5" />
                 Know Your Doctor
@@ -92,7 +92,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="flex justify-center items-center"
+            className="flex justify-center items-center order-1 md:order-2"
           >
             <Image 
               src="/doctor.png" 
