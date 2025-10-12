@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://aasaan-ent-modern.vercel.app'),
+  metadataBase: new URL('https://aasaanentclinic.com'),
   alternates: {
-    canonical: 'https://aasaan-ent-modern.vercel.app/',
+    canonical: 'https://aasaanentclinic.com/'
   },
   openGraph: {
     title: 'AASAAN ENT Clinic - Dr. Anil Kumar Jain | Best ENT Specialist in Bhopal',
     description: 'Leading ENT Specialist in Bhopal with 24+ years experience. Expert in Cochlear Implant, Endoscopy, and comprehensive ENT treatments.',
-    url: 'https://aasaan-ent-modern.vercel.app',
+    url: 'https://aasaanentclinic.com',
     siteName: 'AASAAN ENT Clinic',
     locale: 'en_IN',
     type: 'website',
@@ -99,11 +99,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["Physician", "LocalBusiness"],
-              "@id": "https://aasaan-ent-modern.vercel.app/#organization",
+              "@id": "https://aasaanentclinic.com/#organization",
               "name": "AASAAN ENT Clinic",
-              "logo": "https://aasaan-ent-modern.vercel.app/doctor.png",
+              "logo": "https://aasaanentclinic.com/doctor.png",
               "description": "Leading ENT Specialist in Bhopal with 24+ years experience. Expert in Cochlear Implant, Endoscopy, and comprehensive ENT treatments.",
-              "url": "https://aasaan-ent-modern.vercel.app",
+              "url": "https://aasaanentclinic.com",
               "telephone": "+917240868002",
               "email": "info@aasaanentclinic.com",
               "address": {
@@ -121,7 +121,7 @@ export default function RootLayout({
               },
               "openingHours": "Mo-Sa 17:10-21:00",
               "priceRange": "₹₹",
-              "image": "https://aasaan-ent-modern.vercel.app/doctor.png",
+              "image": "https://aasaanentclinic.com/doctor.png",
               "founder": {
                 "@type": "Person",
                 "name": "Dr. Anil Kumar Jain",

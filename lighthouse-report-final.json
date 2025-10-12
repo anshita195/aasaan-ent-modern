@@ -1,9 +1,9 @@
 {
   "lighthouseVersion": "12.8.1",
-  "requestedUrl": "https://aasaan-ent-modern.vercel.app/",
-  "mainDocumentUrl": "https://aasaan-ent-modern.vercel.app/",
-  "finalDisplayedUrl": "https://aasaan-ent-modern.vercel.app/",
-  "finalUrl": "https://aasaan-ent-modern.vercel.app/",
+  "requestedUrl": "https://aasaanentclinic.com/",
+  "mainDocumentUrl": "https://aasaanentclinic.com/",
+  "finalDisplayedUrl": "https://aasaanentclinic.com/",
+  "finalUrl": "https://aasaanentclinic.com/",
   "fetchTime": "2025-08-20T13:43:25.774Z",
   "gatherMode": "navigation",
   "runtimeError": {
