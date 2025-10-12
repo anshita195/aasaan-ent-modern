@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'AASAAN ENT Clinic - Dr. Anil Kumar Jain | Best ENT Specialist in Bhopal',
-  description: 'AASAAN ENT Clinic by Dr. Anil Kumar Jain - Leading ENT Specialist in Bhopal with 24+ years experience. Expert in Cochlear Implant, Endoscopy, and all ENT treatments.',
+  description: 'AASAAN ENT Clinic by Dr. Anil Kumar Jain - Leading ENT Specialist in Bhopal with 25+ years experience. Expert in Cochlear Implant, Endoscopy, and all ENT treatments.',
   keywords: 'ENT specialist Bhopal, Cochlear Implant surgeon, Dr Anil Kumar Jain, ENT doctor Bhopal, ear nose throat specialist, endoscopy, speech therapy, hearing aid, sinusitis treatment',
   authors: [{ name: 'Dr. Anil Kumar Jain' }],
   creator: 'AASAAN ENT Clinic',
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'AASAAN ENT Clinic - Dr. Anil Kumar Jain | Best ENT Specialist in Bhopal',
-    description: 'Leading ENT Specialist in Bhopal with 24+ years experience. Expert in Cochlear Implant, Endoscopy, and comprehensive ENT treatments.',
+    description: 'Leading ENT Specialist in Bhopal with 25+ years experience. Expert in Cochlear Implant, Endoscopy, and comprehensive ENT treatments.',
     url: 'https://aasaanentclinic.com',
     siteName: 'AASAAN ENT Clinic',
     locale: 'en_IN',
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Dr. Anil Kumar Jain - ENT Specialist',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AASAAN ENT Clinic - Dr. Anil Kumar Jain',
-    description: 'Leading ENT Specialist in Bhopal with 20+ years experience.',
-    images: ['/og-image.jpg'],
+    description: 'Leading ENT Specialist in Bhopal with 25+ years experience.',
+    images: ['/logo.jpg'],
   },
   robots: {
     index: true,
