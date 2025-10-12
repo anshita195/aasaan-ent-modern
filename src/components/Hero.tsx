@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, Clock, MapPin, Calendar, Users, Award, Star, Youtube } from 'lucide-react'
+import { Phone, Clock, MapPin, Calendar, Users, Award, Star, Youtube, Info } from 'lucide-react'
 import Image from 'next/image'
 
 interface HeroProps {
@@ -13,7 +13,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
     { icon: Users, value: '10,000+', label: 'Patients Treated', hindi: 'मरीजों का इलाज' },
     { icon: Award, value: '20+', label: 'Years Experience', hindi: 'साल का अनुभव' },
     { icon: Star, value: '4.9/5', label: 'Patient Rating', hindi: 'मरीज रेटिंग' }
-  ]
+  ];
 
   return (
     <section className="relative min-h-screen bg-white">
@@ -30,7 +30,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column: Content */}
-          <div className="text-center md:text-left flex flex-col justify-center">
+          <div className="text-center md:text-left flex flex-col justify-center order-2 md:order-1">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -58,20 +58,11 @@ export default function Hero({ onBookingClick }: HeroProps) {
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8"
             >
               <a 
-                href="tel:+917240868002"
-                className="medical-button flex items-center justify-center px-8 py-3"
+                href="#about"
+                className="medical-button-invert flex items-center justify-center px-8 py-3"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                Call +91 7240868002
-              </a>
-              <a 
-                href="https://m.youtube.com/channel/UClLl5WoiHRyyPTfUPtx2i0A"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="medical-button-secondary flex items-center justify-center px-8 py-3"
-              >
-                <Youtube className="mr-2 h-5 w-5" />
-                Watch Videos
+                <Info className="mr-2 h-5 w-5" />
+                Know Your Doctor
               </a>
             </motion.div>
 
@@ -101,7 +92,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="flex justify-center items-center"
+            className="flex justify-center items-center order-1 md:order-2"
           >
             <Image 
               src="/doctor.png" 
@@ -127,87 +118,69 @@ export default function Hero({ onBookingClick }: HeroProps) {
           </div>
 
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl">
-            {/* Ear */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="anatomical-diagram text-center"
-            >
-              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
-                <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
-                  <Image
-                    src="/new_ear.png"
-                    alt="Ear Anatomy"
-                    width={80}
-                    height={80}
-                    loading="lazy"
-                    className="w-20 h-20 object-contain"
-                  />
+                        <div className="grid grid-cols-3 gap-x-4 gap-y-8 md:gap-x-8 max-w-4xl items-start">
+              {/* Ear */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="anatomical-diagram text-center"
+              >
+                <div className="transition-all duration-300">
+                  <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
+                    <Image
+                      src="/new_ear.png"
+                      alt="Ear Anatomy"
+                      width={80}
+                      height={80}
+                      loading="lazy"
+                      className="w-20 h-20 object-contain"
+                    />
+                  </div>
+                  <p className="font-semibold text-red-600 text-xl">Ear</p>
+                  <p className="text-base text-gray-600 hindi mt-2">कान</p>
                 </div>
-                <p className="font-semibold text-red-600 text-xl">Ear</p>
-                <p className="text-base text-gray-600 hindi mt-2">कान</p>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Left Ear */}
-            {/* <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="anatomical-diagram text-center"
-            >
-              <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/left_ear.png"
-                  alt="Left Ear Anatomy"
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 mx-auto mb-3"
-                />
-                <p className="font-semibold text-red-600">Left Ear</p>
-                <p className="text-xs text-gray-500 hindi">बायां कान</p>
-              </div>
-            </motion.div> */}
-
-            {/* Nose */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="anatomical-diagram text-center"
-            >
-              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
-                <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
-                  <Image
-                    src="/new_nose.png"
-                    alt="Nose Anatomy"
-                    width={80}
-                    height={80}
-                    loading="lazy"
-                    className="w-20 h-20 object-contain"
-                  />
+              {/* Nose */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="anatomical-diagram text-center"
+              >
+                <div className="transition-all duration-300">
+                  <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
+                    <Image
+                      src="/new_nose.png"
+                      alt="Nose Anatomy"
+                      width={80}
+                      height={80}
+                      loading="lazy"
+                      className="w-20 h-20 object-contain"
+                    />
+                  </div>
+                  <p className="font-semibold text-red-600 text-xl">Nose</p>
+                  <p className="text-base text-gray-600 hindi mt-2">नाक</p>
                 </div>
-                <p className="font-semibold text-red-600 text-xl">Nose</p>
-                <p className="text-base text-gray-600 hindi mt-2">नाक</p>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Throat */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="anatomical-diagram text-center"
-            >
-              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-red-200">
-                <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
-                  <Image
-                    src="/new_throat.png"
-                    alt="Throat Anatomy"
-                    width={80}
-                    height={80}
-                    loading="lazy"
-                    className="w-20 h-20 object-contain"
-                  />
+              {/* Throat */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="anatomical-diagram text-center"
+              >
+                <div className="transition-all duration-300">
+                  <div className="flex justify-center mb-6 h-20 w-20 mx-auto">
+                    <Image
+                      src="/new_throat.png"
+                      alt="Throat Anatomy"
+                      width={80}
+                      height={80}
+                      loading="lazy"
+                      className="w-20 h-20 object-contain"
+                    />
+                  </div>
+                  <p className="font-semibold text-red-600 text-xl">Throat</p>
+                  <p className="text-base text-gray-600 hindi mt-2">गला</p>
                 </div>
-                <p className="font-semibold text-red-600 text-xl">Throat</p>
-                <p className="text-base text-gray-600 hindi mt-2">गला</p>
-              </div>
-            </motion.div>
+              </motion.div>
             </div>
           </div>
         </motion.div>
@@ -222,11 +195,11 @@ export default function Hero({ onBookingClick }: HeroProps) {
           <div className="flex flex-wrap justify-center gap-8 text-base text-gray-600">
             <div className="flex items-center">
               <Phone className="h-5 w-5 mr-3 text-red-600" />
-              <span className="font-semibold text-lg">7240868002</span>
+              <span className="font-semibold text-lg">+91 7240868002</span>
             </div>
             <div className="flex items-center">
               <Clock className="h-5 w-5 mr-3 text-red-600" />
-              <span className="font-medium">Mon-Sat: 5:10 PM - 9:00 PM</span>
+              <span className="font-medium">Mon-Sat 5:10 PM - 9:00 PM</span>
             </div>
             <div className="flex items-center">
               <MapPin className="h-5 w-5 mr-3 text-red-600" />

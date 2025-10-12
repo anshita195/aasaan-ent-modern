@@ -166,13 +166,13 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Contact Us
             <span className="block text-lg font-normal text-medical-brown hindi-text mt-2">
               संपर्क करें
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             Get in touch to schedule your appointment
           </p>
           <div className="w-24 h-1 bg-medical-red mx-auto mt-6"></div>
@@ -185,7 +185,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 md:space-y-8"
           >
             {contactInfo.map((info, index) => (
               <motion.div
@@ -194,13 +194,13 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="flex items-start gap-4 p-6 bg-medical-cream rounded-2xl border border-medical-red/10 hover:shadow-lg transition-all duration-300"
+                className="flex items-start gap-3 p-4 bg-medical-cream rounded-2xl border border-medical-red/10 hover:shadow-lg transition-all duration-300 sm:gap-4 sm:p-6"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-medical-red to-medical-darkred rounded-full flex items-center justify-center flex-shrink-0">
-                  <info.icon className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 bg-gradient-to-br from-medical-red to-medical-darkred rounded-full flex items-center justify-center flex-shrink-0 sm:w-12 sm:h-12">
+                  <info.icon className="w-5 h-5 text-white sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h4>
+                  <h4 className="text-base font-bold text-gray-900 mb-1 sm:text-lg md:text-xl">{info.title}</h4>
                   {info.link ? (
                     <a
                       href={info.link}
@@ -226,17 +226,17 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="mt-12"
+            className="mt-8 md:mt-12"
           >
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-medical-red/10">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center sm:text-2xl md:mb-6">
                 Find Us Here
                 <span className="block text-lg font-normal text-medical-brown hindi-text mt-2">
                   हमारा स्थान
                 </span>
               </h3>
               
-              <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-md">
+              <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-md">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.5234567890123!2d75.8577258!3d22.7195687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c67b3e8bdeb39%3A0x2d3751fb39c39c0!2sDr.%20Anil%20Kumar%20Jain%20The%20Best%20ENT%20Specialist%20Bhopal!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                   width="100%"
@@ -250,8 +250,8 @@ export default function Contact() {
               </div>
               
               <div className="mt-4 text-center">
-                <p className="text-gray-700 font-medium">
-                  Krishna Plaza, G-56, Near Narmada Sweet House, Bairagarh, Bhopal, MP 462030
+                <p className="text-sm md:text-base text-gray-700 font-medium">
+                   G-56, Krishna Plaza, Near Nerbada Sweet House, Bairagarh, Bhopal, MP 462030
                 </p>
                 <a
                   href="https://www.google.com/maps/dir//Dr.+Anil+Kumar+Jain+The+Best+ENT+Specialist+Bhopal,+Krishna+Plaza,+G-56,+near+Narmada+Sweet+House,+Bairagarh,+Bhopal,+Madhya+Pradesh+462030/@22.7195687,75.8577258,17z"

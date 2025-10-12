@@ -140,6 +140,37 @@ body::before {
   outline-offset: 2px;
 }
 
+/* Inverted (Light) CTA Button */
+.medical-button-invert {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  padding: 12px 20px;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 16px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 200ms cubic-bezier(.2,.9,.2,1);
+  border: 2px solid var(--brand-primary);
+  cursor: pointer;
+  box-shadow: var(--elevation-1);
+  text-decoration: none;
+}
+
+.medical-button-invert:hover {
+  background: #f9f9f9;
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: var(--elevation-2);
+}
+
+.medical-button-invert:focus {
+  outline: 3px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
 .medical-cross {
   position: relative;
   width: 24px;

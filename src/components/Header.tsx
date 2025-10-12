@@ -42,35 +42,33 @@ export default function Header({ onBookingClick }: HeaderProps) {
         source: 'header'
       })
     }
-    window.location.href = 'tel:+917240868002'
+    window.location.href = 'tel: 7240868002'
   }
 
   return (
     <>
       <header className={`${isScrolled ? 'header-sticky' : 'bg-white shadow-lg sticky top-0'} z-50 transition-all duration-300`}>
-        {/* Top Bar - Hide on scroll */}
-        {!isScrolled && (
-          <div style={{ background: 'var(--brand-primary)' }} className="text-white py-2">
-            <div className="container mx-auto px-4">
-              <div className="flex flex-col sm:flex-row justify-between items-center text-base">
-                <div className="flex items-center space-x-6 mb-2 sm:mb-0">
-                  <a href="tel:7240868002" className="flex items-center hover:underline">
-                    <Phone className="h-5 w-5 mr-2" />
-                    <span className="font-medium">7240868002</span>
-                  </a>
-                  <div className="flex items-center">
-                    <Clock className="h-5 w-5 mr-2" />
-                    <span className="font-medium">Mon-Sat: 5:10 PM - 9:00 PM</span>
-                  </div>
-                </div>
+        {/* Top Contact Bar - Hidden on mobile */}
+        <div className="hidden lg:block text-white py-2" style={{ background: 'var(--brand-primary)' }}>
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col sm:flex-row justify-between items-center text-base">
+              <div className="flex items-center space-x-6 mb-2 sm:mb-0">
+                <a href="tel:7240868002" className="flex items-center hover:underline">
+                  <Phone className="h-5 w-5 mr-2" />
+                  <span className="font-medium">7240868002</span>
+                </a>
                 <div className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-2" />
-                  <span className="font-medium">Bhopal, Madhya Pradesh</span>
+                  <Clock className="h-5 w-5 mr-2" />
+                  <span className="font-medium">Mon-Sat: 5:10 PM - 9:00 PM</span>
                 </div>
+              </div>
+              <div className="flex items-center">
+                <MapPin className="h-5 w-5 mr-2" />
+                <span className="font-medium">Bhopal, Madhya Pradesh</span>
               </div>
             </div>
           </div>
-        )}
+        </div>
 
         {/* Main Navigation */}
         <div className="container mx-auto px-4">
@@ -79,7 +77,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center space-x-3"
+              className="flex items-center gap-3"
             >
               <div className="flex-shrink-0">
                 <Image 
@@ -90,16 +88,15 @@ export default function Header({ onBookingClick }: HeaderProps) {
                   className={`${isScrolled ? 'h-12 w-12' : 'h-16 w-16'} object-contain transition-all duration-300`}
                 />
               </div>
-              <div>
-                <h1 className={`font-bold text-gray-800 ${isScrolled ? 'text-xl' : 'text-2xl'}`}>
-                  AASAAN ENT CLINIC
-                </h1>
-                {!isScrolled && (
-                  <p className="text-base hindi" style={{ color: 'var(--brand-primary)' }}>
-                    आसान ईएनटी क्लिनिक
-                  </p>
-                )}
-              </div>
+              {/* Moved Call Button next to Logo */}
+              <a
+                href="tel:+917240868002"
+                onClick={handleCallClick}
+                className="medical-button"
+                data-testid="header-call-button"
+              >
+                <Phone className="h-5 w-5 text-white-600" /> Call
+              </a>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -119,7 +116,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
               ))}
             </nav>
 
-            {/* CTA Button & Phone */}
+            {/* Right-side utilities (kept small phone on scroll, removed duplicate call button) */}
             <div className="flex items-center gap-3">
               {isScrolled && (
                 <a 
@@ -129,14 +126,6 @@ export default function Header({ onBookingClick }: HeaderProps) {
                   <Phone className="h-4 w-4" />
                 </a>
               )}
-              
-              <a
-                href="tel:+917240868002"
-                onClick={handleCallClick}
-                className="medical-button"
-              >
-                Call +91 7240868002
-              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -170,13 +159,6 @@ export default function Header({ onBookingClick }: HeaderProps) {
                     <span className="block text-sm text-gray-500 hindi">{item.hindi}</span>
                   </a>
                 ))}
-                <a 
-                  href="tel:+917240868002"
-                  onClick={handleCallClick}
-                  className="medical-button mt-4"
-                >
-                  Call +91 7240868002
-                </a>
               </nav>
             </div>
           </motion.div>
@@ -184,7 +166,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
       </header>
 
       {/* Mobile Sticky CTA */}
-      <div className="mobile-sticky-cta md:hidden">
+      {/* <div className="mobile-sticky-cta md:hidden">
         <a
           href="tel:+917240868002"
           onClick={handleCallClick}
@@ -193,7 +175,7 @@ export default function Header({ onBookingClick }: HeaderProps) {
           <Phone className="w-5 h-5" />
           Call +91 7240868002
         </a>
-      </div>
+      </div> */}
     </>
   )
 }
