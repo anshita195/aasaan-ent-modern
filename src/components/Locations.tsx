@@ -19,7 +19,7 @@ export default function Locations() {
       timing: '5:10 PM - 9:00 PM',
       phone: '7240868002',
       specialNote: 'Sunday - Only on Appointment',
-      consultationFee: '₹300',
+      consultationFee: '₹400',
       noteType: 'warning'
     },
     {
@@ -30,7 +30,7 @@ export default function Locations() {
       timing: '5:10 PM - 9:00 PM',
       phone: '7240868002',
       specialNote: 'Sunday - Only on Appointment',
-      consultationFee: '₹300',
+      consultationFee: '₹400',
       noteType: 'warning'
     },
     
