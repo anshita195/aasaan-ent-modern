@@ -67,7 +67,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
         <meta name="theme-color" content="#d32f2f" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
