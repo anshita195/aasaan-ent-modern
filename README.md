@@ -1,42 +1,58 @@
-# AASAAN ENT Clinic - Professional Medical Website
+# AASAAN ENT Clinic Website
 
-A modern, high-performance medical clinic website built with Next.js, TypeScript, and Tailwind CSS. Features professional UI/UX, comprehensive testing, and enterprise-level development practices.
+A modern, responsive healthcare website built with Next.js, TypeScript, and Tailwind CSS. Features comprehensive testing, CI/CD pipeline, and production-ready deployment.
 
-## ✨ Features
+## Live Website
 
-- **🚀 High Performance**: 94/100 Lighthouse score with optimized loading
-- **📱 Responsive Design**: Mobile-first approach with seamless device compatibility
-- **🔍 SEO Optimized**: Rich schema markup and comprehensive meta tags
-- **♿ Accessible**: WCAG 2.1 AA compliance with proper ARIA attributes
-- **🧪 Fully Tested**: Unit tests with 70%+ coverage threshold
-- **🔒 Secure**: CSP headers and dependency vulnerability scanning
-- **🌐 Bilingual**: English and Hindi language support
-- **📊 Analytics Ready**: Google Analytics 4 integration
+[View Live Site](https://www.aasaanentclinic.com/)
 
-### Medical Features
-- **📋 Services Showcase**: Complete ENT treatment offerings
-- **👨‍⚕️ Doctor Profile**: Professional credentials and experience
-- **📞 Direct Contact**: Click-to-call and WhatsApp integration
-- **🗺️ Location Maps**: Embedded Google Maps for clinic locations
-- **⭐ Patient Reviews**: Google Reviews integration
-- **🎥 Educational Content**: YouTube video integration
+## Overview
 
-## 🛠️ Tech Stack
+This project is a professional medical clinic website for AASAAN ENT Clinic, featuring doctor profiles, service listings, patient testimonials, and contact information. The website is optimized for performance, SEO, and accessibility.
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Testing**: Jest + React Testing Library
-- **Linting**: ESLint
-- **CI/CD**: GitHub Actions
+## Technical Features
 
-## 🚀 Quick Start
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript for type safety
+- **Styling**: Tailwind CSS with custom medical theme
+- **Testing**: Jest with React Testing Library (70%+ coverage)
+- **CI/CD**: GitHub Actions with multi-version Node.js testing
+- **Performance**: Optimized images and lazy loading
+- **SEO**: Structured data, meta tags, and sitemap
+- **Analytics**: Google Analytics 4 integration
+- **Accessibility**: WCAG 2.1 AA compliance
+
+## Project Structure
+
+```
+src/
+├── app/                 # Next.js App Router
+│   ├── globals.css     # Global styles and CSS variables
+│   ├── layout.tsx      # Root layout with metadata
+│   └── page.tsx        # Home page component
+├── components/         # React components
+│   ├── __tests__/      # Unit tests for components
+│   ├── Header.tsx      # Navigation header
+│   ├── Hero.tsx        # Hero section
+│   ├── Services.tsx    # Services showcase
+│   ├── About.tsx       # Doctor profile section
+│   ├── Locations.tsx   # Clinic locations
+│   ├── Contact.tsx     # Contact information
+│   ├── Testimonials.tsx # Patient reviews
+│   ├── YouTube.tsx     # Educational content
+│   └── Footer.tsx      # Site footer
+public/                 # Static assets
+├── sitemap.xml        # SEO sitemap
+├── robots.txt         # Search engine directives
+└── google*.html       # Google verification files
+```
+
+## Development Setup
 
 ### Prerequisites
-- Node.js 18+ 
-- npm or yarn
+
+- Node.js 18 or higher
+- npm or yarn package manager
 
 ### Installation
 
@@ -50,121 +66,118 @@ npm install
 
 # Set up environment variables
 cp .env.example .env.local
-# Add your Google Analytics ID and other config
+# Add your Google Analytics ID: NEXT_PUBLIC_GA_MEASUREMENT_ID=your_ga_id
 
 # Start development server
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) to see the application.
+Visit [http://localhost:3000](http://localhost:3000) to view the application.
 
-## 🧪 Testing
+## Available Scripts
 
-### Run Tests
 ```bash
-# Run all tests
-npm test
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
 
-# Run tests in watch mode
-npm run test:watch
+# Testing
+npm test             # Run all tests
+npm run test:watch   # Run tests in watch mode
+npm run test:coverage # Run tests with coverage report
 
-# Run tests with coverage
-npm run test:coverage
+# Code Quality
+npm run lint         # Run ESLint
+npm run lint:fix     # Fix ESLint issues
+npm run type-check   # Run TypeScript type checking
+npm run validate     # Run all quality checks
+
+# Security
+npm run audit:deps   # Audit dependencies for vulnerabilities
 ```
 
-### Quality Checks
-```bash
-# Type checking
-npm run type-check
+## Testing
 
-# Linting
-npm run lint
+The project includes comprehensive unit tests using Jest and React Testing Library:
 
-# Auto-fix linting issues
-npm run lint:fix
+- Component rendering tests
+- User interaction tests
+- Accessibility tests
+- Integration tests
 
-# Security audit
-npm run audit:deps
+Coverage threshold: 70% lines, 60% functions
 
-# Run all validation checks
-npm run validate
-```
+## CI/CD Pipeline
 
-## 🏗️ Project Structure
+GitHub Actions workflow configured with:
 
-```
-src/
-├── app/                 # Next.js App Router
-│   ├── globals.css     # Global styles
-│   ├── layout.tsx      # Root layout
-│   └── page.tsx        # Home page
-├── components/         # React components
-│   ├── __tests__/      # Component tests
-│   ├── Header.tsx      # Site header
-│   ├── Hero.tsx        # Hero section
-│   ├── Services.tsx    # Services showcase
-│   ├── About.tsx       # About section
-│   ├── Contact.tsx     # Contact form
-│   └── ...            # Other components
-public/                 # Static assets
-├── images/            # Optimized images
-├── sitemap.xml        # SEO sitemap
-└── robots.txt         # Search engine directives
-```
+- Multi-version Node.js testing (18.x, 20.x)
+- Automated dependency installation
+- Code quality checks (TypeScript, ESLint)
+- Test execution with coverage reporting
+- Build validation
 
-## 🚀 Deployment
+## Deployment
 
-### Build for Production
-```bash
-npm run build
-npm start
-```
+### Vercel (Recommended)
 
-### Deploy to Vercel
 ```bash
 # Install Vercel CLI
 npm i -g vercel
 
-# Deploy
+# Deploy to production
 vercel --prod
 ```
 
-## 📈 Performance Metrics
+### Manual Deployment
 
-- **Performance**: 94/100
-- **Accessibility**: 94/100  
-- **Best Practices**: 100/100
-- **SEO**: 100/100
-- **First Contentful Paint**: 1.2s
-- **Largest Contentful Paint**: 2.7s
+```bash
+# Build the application
+npm run build
 
-## 🔧 Configuration
-
-### Environment Variables
-```env
-NEXT_PUBLIC_GA_MEASUREMENT_ID=your_ga_id
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+# Start production server
+npm start
 ```
 
-### Jest Configuration
-Coverage thresholds and test patterns are configured in `jest.config.js`.
+## Performance Metrics
 
-### ESLint Configuration  
-Code quality rules are defined in `.eslintrc.json`.
+- **Lighthouse Performance**: 94/100
+- **Lighthouse Accessibility**: 94/100
+- **Lighthouse Best Practices**: 100/100
+- **Lighthouse SEO**: 100/100
+- **First Contentful Paint**: < 1.5s
+- **Largest Contentful Paint**: < 2.5s
 
-## 🤝 Contributing
+## SEO Features
+
+- Structured data markup for medical practice
+- Open Graph and Twitter Card meta tags
+- XML sitemap generation
+- Robots.txt configuration
+- Mobile-first responsive design
+- Fast loading times
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add your feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Contact
 
-<div align="center">
-  <strong>Built with ❤️ for better healthcare accessibility</strong>
-</div>
+For questions about this project, please contact the development team.
